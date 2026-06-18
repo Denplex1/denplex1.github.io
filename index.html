@@ -2,183 +2,165 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Denplex | Graphic Designer</title>
   <meta name="p:domain_verify" content="609fd5b146191c2c06b54e729163836e"/>
-  <title>Denplex | Web Developer & Designer</title>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
     :root {
-      --main-color: #2563eb;
-      --dark-color: #1e40af;
-      --bg: #f4f4f4;
-      --text: #333;
-      --card-bg: #ffffff;
+      --bg: #0A0A0A;
+      --card: #111111;
+      --text: #F5F5F5;
+      --muted: #A3A3A3;
+      --accent: #3B82F6;
+      --border: #262626;
     }
-    body.dark {
-      --bg: #0f172a;
-      --text: #e2e8f0;
-      --card-bg: #1e293b;
-      --main-color: #3b82f6;
-      --dark-color: #1d4ed8;
-    }
+    
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
     body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
+      font-family: 'Inter', sans-serif;
       background: var(--bg);
       color: var(--text);
-      transition: 0.3s;
+      line-height: 1.6;
     }
-    header {
-      background: var(--main-color);
-      color: white;
-      padding: 40px 20px 20px;
-      text-align: center;
-      position: relative;
-    }
-    .theme-toggle {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      background: rgba(255,255,255,0.2);
-      border: 2px solid white;
-      color: white;
-      padding: 8px 15px;
-      border-radius: 20px;
-      cursor: pointer;
-      font-weight: bold;
-    }
-    .profile-pic {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      border: 4px solid white;
-      margin: 0 auto 20px;
-      background: url('https://i.imgur.com/Ki9Xogr.jpg') center/cover;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    }
-    header h1 { font-size: 48px; margin-bottom: 10px; }
-    header p { font-size: 20px; opacity: 0.9; }
+    
+    h1, h2, h3 { font-family: 'Space Grotesk', sans-serif; font-weight: 700; }
+    
+    /* Nav */
     nav {
-      background: var(--dark-color);
-      padding: 15px;
+      position: fixed; top: 0; width: 100%;
+      background: rgba(10,10,10,0.8); backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      z-index: 100;
+    }
+    .nav-container {
+      max-width: 1100px; margin: 0 auto; padding: 16px 24px;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .logo { font-weight: 900; font-size: 20px; }
+    .nav-links a {
+      color: var(--muted); text-decoration: none; margin-left: 32px;
+      font-weight: 500; transition: 0.2s;
+    }
+    .nav-links a:hover { color: var(--text); }
+    
+    /* Hero */
+    .hero {
+      max-width: 1100px; margin: 0 auto; padding: 160px 24px 100px;
       text-align: center;
-      position: sticky;
-      top: 0;
     }
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 15px;
-      font-weight: bold;
+    .hero h1 { font-size: 56px; line-height: 1.1; margin-bottom: 16px; }
+    .hero p { color: var(--muted); font-size: 20px; max-width: 600px; margin: 0 auto 32px; }
+    
+    .btn {
+      background: var(--accent); color: white; padding: 14px 28px;
+      border-radius: 8px; text-decoration: none; font-weight: 700;
+      display: inline-block; transition: 0.2s;
     }
-    section {
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 0 20px;
+    .btn:hover { opacity: 0.9; transform: translateY(-2px); }
+    .btn-whatsapp { background: #25D366; margin-left: 12px; }
+    
+    /* Sections */
+    section { max-width: 1100px; margin: 0 auto; padding: 80px 24px; }
+    section h2 { font-size: 36px; margin-bottom: 40px; }
+    
+    /* Grid */
+    .grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
     }
-    h2 {
-      font-size: 32px;
-      margin-bottom: 20px;
-      color: var(--main-color);
+    .card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 12px; padding: 24px; transition: 0.2s;
     }
-    .contact-item a { color: var(--main-color); font-weight: bold; }
-    .project-card, .contact form, .contact-info {
-      background: var(--card-bg);
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      margin-bottom: 20px;
-    }
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
-    .project-card a {
-      display: inline-block;
-      margin-top: 10px;
-      background: var(--main-color);
-      color: white;
-      padding: 8px 15px;
-      border-radius: 5px;
-      text-decoration: none;
-    }
+    .card:hover { border-color: var(--accent); transform: translateY(-4px); }
+    .card img { width: 100%; border-radius: 8px; margin-bottom: 16px; }
+    .card h3 { margin-bottom: 8px; }
+    .card p { color: var(--muted); font-size: 14px; }
+    
+    /* Footer */
     footer {
-      background: #333;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      margin-top: 40px;
+      border-top: 1px solid var(--border); text-align: center;
+      padding: 40px 24px; color: var(--muted); font-size: 14px;
+    }
+    
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 40px; }
+      .nav-links { display: none; }
+      .btn-whatsapp { margin-left: 0; margin-top: 12px; display: block; }
     }
   </style>
 </head>
 <body>
-  <header>
-    <button class="theme-toggle" id="themeToggle">🌙 Dark</button>
-    <div class="profile-pic"></div>
-    <h1>Denplex</h1>
-    <p>Web Developer & Graphic Designer</p>
-  </header>
-
   <nav>
-    <a href="#about">About</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
+    <div class="nav-container">
+      <div class="logo">DENPLEX</div>
+      <div class="nav-links">
+        <a href="#work">Work</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
   </nav>
 
-  <section id="about">
-    <h2>About Me</h2>
-    <p>I'm Denplex, a self-taught web developer and graphic designer from Ikinu, Kenya.</p>
+  <div class="hero">
+    <h1>Graphic Designer<br>Based in Ikinu, Kenya</h1>
+    <p>I create bold logos, posters, and brand identities that help businesses stand out and sell more.</p>
+    <a href="#work" class="btn">View Work</a>
+    <a href="https://wa.me/254712020337?text=Hey%20I%20saw%20your%20portfolio" target="_blank" class="btn btn-whatsapp">💬 WhatsApp Me</a>
+  </div>
+
+  <section id="work">
+    <h2>Selected Work</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="https://via.placeholder.com/400x300/111111/3B82F6?text=Logo+Project" alt="Logo Design">
+        <h3>Brand Identity</h3>
+        <p>Logo + color system for local restaurant. +40% brand recognition.</p>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/400x300/111111/3B82F6?text=Poster+Project" alt="Poster Design">
+        <h3>Event Poster</h3>
+        <p>Bold typography poster for music event. Sold out in 3 days.</p>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/400x300/111111/3B82F6?text=Social+Media" alt="Social Media">
+        <h3>Social Media Kit</h3>
+        <p>30-day content pack for fitness brand. 2x engagement.</p>
+      </div>
+    </div>
   </section>
 
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="projects">
-      <div class="project-card">
-        <h3>WhatsApp Clone</h3>
-        <p>Rebuilt WhatsApp UI with HTML, CSS, and JavaScript.</p>
-        <a href="#" target="_blank">View Project</a>
+  <section id="services">
+    <h2>Services</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Logo Design</h3>
+        <p>Custom wordmark or icon logo. 2 concepts, 3 revisions. Delivery: 5 days.</p>
+      </div>
+      <div class="card">
+        <h3>Poster Design</h3>
+        <p>Event, business, or promo posters. Print-ready + social sizes.</p>
+      </div>
+      <div class="card">
+        <h3>Brand Identity</h3>
+        <p>Logo + colors + fonts + basic brand guide. Full package.</p>
       </div>
     </div>
   </section>
 
   <section id="contact">
-    <h2>Contact Me</h2>
-    <div class="contact-info">
-      <div class="contact-item">
-        <a href="https://wa.me/254712020337?text=Hey%20I%20saw%20your%20portfolio" target="_blank" style="background:#25D366; color:white; padding:12px 20px; border-radius:8px; text-decoration:none; font-weight:bold; display:inline-block; margin-top:10px;">
-   💬 WhatsApp Me
-</a>
-        📧 <a href="mailto:empiredenplex979@gmail.com">empiredenplex979@gmail.com</a>
-      </div>
-      <div class="contact-item">
-        📱 <a href="tel:0712020337">0712 020 337</a>
-      </div>
-    </div>
+    <h2>Let's Work Together</h2>
+    <p style="color:var(--muted); margin-bottom:24px;">Have a project? Send details and I'll reply with a quote in 2 hours.</p>
+    <a href="https://wa.me/254712020337?text=Hey%20I%20saw%20your%20portfolio.%20I%20need%20a..." target="_blank" class="btn btn-whatsapp">💬 Start on WhatsApp</a>
   </section>
 
- <footer>
-    <p>&copy; 2026 Denplex. Built with HTML, CSS & JavaScript.</p>
+  <footer>
+    © 2026 Denplex. Built in Ikinu, Kenya.
   </footer>
-
-  <script>
-    const toggleBtn = document.getElementById('themeToggle');
-    const body = document.body;
-    
-    if(localStorage.getItem('theme') === 'dark') {
-      body.classList.add('dark');
-      toggleBtn.textContent = '☀️ Light';
-    }
-
-    toggleBtn.addEventListener('click', () => {
-      body.classList.toggle('dark');
-      if(body.classList.contains('dark')) {
-        toggleBtn.textContent = '☀️ Light';
-        localStorage.setItem('theme', 'dark');
-      } else {
-        toggleBtn.textContent = '🌙 Dark';
-        localStorage.setItem('theme', 'light');
-      }
-    });
-  </script>
 </body>
 </html>
