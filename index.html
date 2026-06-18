@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Denplex | Web Developer & Designer</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --main-color: #2563eb;
+      --dark-color: #1e40af;
+      --bg: #f4f4f4;
+      --text: #333;
+      --card-bg: #ffffff;
+    }
+    body.dark {
+      --bg: #0f172a;
+      --text: #e2e8f0;
+      --card-bg: #1e293b;
+      --main-color: #3b82f6;
+      --dark-color: #1d4ed8;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background: var(--bg);
+      color: var(--text);
+      transition: 0.3s;
+    }
+    header {
+      background: var(--main-color);
+      color: white;
+      padding: 40px 20px 20px;
+      text-align: center;
+      position: relative;
+    }
+    .theme-toggle {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: rgba(255,255,255,0.2);
+      border: 2px solid white;
+      color: white;
+      padding: 8px 15px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .profile-pic {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 4px solid white;
+      margin: 0 auto 20px;
+      background: url('https://i.imgur.com/Ki9Xogr.jpg') center/cover;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+    header h1 { font-size: 48px; margin-bottom: 10px; }
+    header p { font-size: 20px; opacity: 0.9; }
+    nav {
+      background: var(--dark-color);
+      padding: 15px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+    section {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    h2 {
+      font-size: 32px;
+      margin-bottom: 20px;
+      color: var(--main-color);
+    }
+    .contact-item a { color: var(--main-color); font-weight: bold; }
+    .project-card, .contact form, .contact-info {
+      background: var(--card-bg);
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+    }
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .project-card a {
+      display: inline-block;
+      margin-top: 10px;
+      background: var(--main-color);
+      color: white;
+      padding: 8px 15px;
+      border-radius: 5px;
+      text-decoration: none;
+    }
+    footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <button class="theme-toggle" id="themeToggle">🌙 Dark</button>
+    <div class="profile-pic"></div>
+    <h1>Denplex</h1>
+    <p>Web Developer & Graphic Designer</p>
+  </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>I'm Denplex, a self-taught web developer and graphic designer from Ikinu, Kenya.</p>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects">
+      <div class="project-card">
+        <h3>WhatsApp Clone</h3>
+        <p>Rebuilt WhatsApp UI with HTML, CSS, and JavaScript.</p>
+        <a href="#" target="_blank">View Project</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <div class="contact-info">
+      <div class="contact-item">
+        📧 <a href="mailto:empiredenplex979@gmail.com">empiredenplex979@gmail.com</a>
+      </div>
+      <div class="contact-item">
+        📱 <a href="tel:0712020337">0712 020 337</a>
+      </div>
+    </div>
+  </section>
+
+ <footer>
+    <p>&copy; 2026 Denplex. Built with HTML, CSS & JavaScript.</p>
+  </footer>
+
+  <script>
+    const toggleBtn = document.getElementById('themeToggle');
+    const body = document.body;
+    
+    if(localStorage.getItem('theme') === 'dark') {
+      body.classList.add('dark');
+      toggleBtn.textContent = '☀️ Light';
+    }
+
+    toggleBtn.addEventListener('click', () => {
+      body.classList.toggle('dark');
+      if(body.classList.contains('dark')) {
+        toggleBtn.textContent = '☀️ Light';
+        localStorage.setItem('theme', 'dark');
+      } else {
+        toggleBtn.textContent = '🌙 Dark';
+        localStorage.setItem('theme', 'light');
+      }
+    });
+  </script>
+</body>
+</html>
