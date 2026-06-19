@@ -80,16 +80,34 @@
     [data-theme="dark"] .sun-icon { display: block; }
     
     /* Hero */
-    .hero {
-     height: 100vh;
-      display: flex;
-      align-items: centre;
-    justify-content: center;
-    text-align: center;
-    background: url('hero.jpg') center/cover no-repeat;
-    color: white;
-    padding: 0 1rem;
-    }
+   #hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: url('hero.jpg') center/cover no-repeat;
+  color: white;
+  padding: 0 1rem;
+  position: relative;
+}
+
+#hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.45);
+  z-index: 0;
+}
+
+#hero .hero-content {
+  position: relative;
+  z-index: 1;
+}
+    
     
     .btn {
       background: var(--accent); color: white; padding: 14px 24px;
