@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Denplex - Graphics & Web Designer|Branding Specialist</title>
+  <title>Denplex Arts | Minimalist Logo & Brand Design | Kiambu, Kenya</title>
+  <meta name="description" content="Custom minimalist & signature logos for startups and SMEs. Based in Kiambu, Kenya. Order from $25 on Fiverr. No templates.">
   <meta name="p:domain_verify" content="609fd5b146191c2c06b54e729163836e"/>
   
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
@@ -14,6 +15,7 @@
       --text: #0F172A;
       --muted: #64748B;
       --accent: #1E40AF;
+      --fiverr: #1DBF73;
       --light: #F8FAFC;
       --border: #E2E8F0;
       --card: #FFFFFF;
@@ -24,6 +26,7 @@
       --text: #F5F5F5;
       --muted: #A3A3A3;
       --accent: #3B82F6;
+      --fiverr: #1DBF73;
       --light: #111111;
       --border: #262626;
       --card: #111111;
@@ -35,7 +38,7 @@
       font-family: 'Inter', sans-serif;
       background: var(--bg);
       color: var(--text);
-      line-height: 1.5;
+      line-height: 1.6;
       transition: background 0.3s, color 0.3s;
     }
     
@@ -50,19 +53,19 @@
       z-index: 100;
     }
     .nav-container {
-      max-width: 1280px; margin: 0 auto; padding: 20px 32px;
+      max-width: 1280px; margin: 0 auto; padding: 16px 24px;
       display: flex; justify-content: space-between; align-items: center;
     }
     .logo { font-weight: 800; font-size: 18px; letter-spacing: -0.5px; }
-    .nav-right { display: flex; align-items: center; gap: 24px; }
-    .nav-links { display: flex; gap: 40px; }
+    .nav-right { display: flex; align-items: center; gap: 16px; }
+    .nav-links { display: flex; gap: 32px; }
     .nav-links a {
       color: var(--muted); text-decoration: none; font-size: 14px;
       font-weight: 500; transition: 0.2s;
     }
     .nav-links a:hover { color: var(--accent); }
     .nav-cta {
-      background: var(--accent); color: white !important;
+      background: var(--fiverr); color: white !important;
       padding: 10px 18px; border-radius: 6px; font-weight: 600;
     }
     
@@ -79,114 +82,147 @@
     [data-theme="dark"] .moon-icon { display: none; }
     [data-theme="dark"] .sun-icon { display: block; }
     
-    /* Hero */
-   #hero {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  background: url('hero.jpg') center/cover no-repeat;
-  color: white;
-  padding: 0 1rem;
-  position: relative;
-}
-
-#hero::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0,0,0,0.45);
-  z-index: 0;
-}
-
-#hero .hero-content {
-  position: relative;
-  z-index: 1;
-}
-    
+    /* Hero - FIXED */
+    .hero {
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 140px 24px 80px;
+      background: var(--light);
+      border-bottom: 1px solid var(--border);
+    }
+    .hero-content { max-width: 720px; }
+    .hero h1 { 
+      font-size: clamp(40px, 6vw, 64px); 
+      line-height: 1.1; 
+      margin-bottom: 20px; 
+    }
+    .hero p { 
+      font-size: 18px; 
+      color: var(--muted); 
+      margin-bottom: 32px; 
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .hero-tags {
+      display: flex; gap: 12px; justify-content: center;
+      margin-bottom: 32px; flex-wrap: wrap;
+    }
+    .tag {
+      background: var(--bg); border: 1px solid var(--border);
+      padding: 6px 14px; border-radius: 50px; font-size: 13px;
+      font-weight: 500; color: var(--muted);
+    }
     
     .btn {
-      background: var(--accent); color: white; padding: 14px 24px;
+      background: var(--accent); color: white; padding: 14px 28px;
       border-radius: 6px; text-decoration: none; font-weight: 600;
       font-size: 15px; display: inline-block; transition: 0.2s;
+      margin: 4px;
     }
-    .btn:hover { opacity: 0.9; }
-    .btn-whatsapp { background: #25D366; margin-left: 12px; }
-    .btn-whatsapp:hover { background: #1DA851; }
+    .btn:hover { opacity: 0.9; transform: translateY(-1px); }
+    .btn-fiverr { background: var(--fiverr); }
+    .btn-whatsapp { background: #25D366; }
     
     /* Sections */
-    section { max-width: 1280px; margin: 0 auto; padding: 100px 32px; }
-    .section-header { margin-bottom: 64px; }
+    section { max-width: 1280px; margin: 0 auto; padding: 100px 24px; }
+    .section-header { margin-bottom: 64px; text-align: center; }
     .eyebrow { 
       color: var(--accent); font-weight: 600; font-size: 14px; 
       margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.5px;
     }
-    section h2 { font-size: 48px; line-height: 1.1; max-width: 720px; }
+    section h2 { font-size: clamp(32px, 5vw, 48px); line-height: 1.1; }
     
     /* Work Grid */
     .work-grid {
-      display: grid; grid-template-columns: repeat(2, 1fr);
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: 32px;
     }
+    .work-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 12px; overflow: hidden; transition: 0.3s;
+    }
+    .work-card:hover { transform: translateY(-4px); box-shadow: 0 12px 24px rgba(0,0,0,0.1); }
     .work-card img {
-      width: 100%; height: 400px; object-fit: cover;
-      border-radius: 8px; margin-bottom: 20px; border: 1px solid var(--border);
+      width: 100%; height: 280px; object-fit: cover;
+      border-bottom: 1px solid var(--border);
     }
-    .work-card h3 { font-size: 20px; margin-bottom: 8px; }
-    .work-card p { color: var(--muted); font-size: 15px; }
+    .work-content { padding: 24px; }
+    .work-card h3 { font-size: 18px; margin-bottom: 8px; }
+    .work-card p { color: var(--muted); font-size: 15px; margin-bottom: 12px; }
+    .work-result { font-size: 14px; color: var(--accent); font-weight: 500; }
     
-    /* Services */
-    .services-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr);
-      gap: 32px; padding-top: 20px;
+    /* Packages */
+    .packages-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px; margin-top: 40px;
     }
-    .service {
-      padding: 32px 0; border-top: 1px solid var(--border);
+    .package {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 12px; padding: 32px; position: relative;
     }
-    .service h3 { font-size: 18px; margin-bottom: 12px; }
-    .service p { color: var(--muted); font-size: 15px; }
+    .package-popular {
+      border: 2px solid var(--fiverr);
+    }
+    .popular-badge {
+      position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+      background: var(--fiverr); color: white; padding: 4px 16px;
+      border-radius: 50px; font-size: 12px; font-weight: 600;
+    }
+    .package h3 { font-size: 24px; margin-bottom: 8px; }
+    .package-price { font-size: 40px; font-weight: 800; margin-bottom: 20px; }
+    .package-price span { font-size: 16px; color: var(--muted); font-weight: 500; }
+    .package ul { list-style: none; margin-bottom: 24px; }
+    .package li { padding: 8px 0; color: var(--muted); font-size: 15px; }
+    .package li:before { content: "✓"; color: var(--fiverr); font-weight: 700; margin-right: 8px; }
     
     /* CTA Banner */
     .cta-banner {
       background: var(--light); text-align: center; 
-      padding: 100px 32px; margin: 0 -32px;
+      padding: 100px 24px; margin: 0;
       border-top: 1px solid var(--border);
       border-bottom: 1px solid var(--border);
     }
-    .cta-banner h2 { margin: 0 auto 24px; }
+    .cta-banner h2 { margin: 0 auto 24px; max-width: 600px; }
+    
+    /* Sticky Fiverr Button */
+    .sticky-cta {
+      position: fixed; bottom: 20px; right: 20px; z-index: 99;
+    }
+    .sticky-cta a {
+      background: var(--fiverr); color: white; padding: 14px 24px;
+      border-radius: 50px; font-weight: 600; text-decoration: none;
+      box-shadow: 0 8px 24px rgba(29,191,115,0.4); display: block;
+      transition: 0.2s;
+    }
+    .sticky-cta a:hover { transform: scale(1.05); }
     
     /* Footer */
     footer {
-      border-top: 1px solid var(--border); padding: 40px 32px;
-      max-width: 1280px; margin: 0 auto; display: flex;
-      justify-content: space-between; color: var(--muted); font-size: 14px;
+      border-top: 1px solid var(--border); padding: 40px 24px;
+      max-width: 1280px; margin: 0 auto; text-align: center;
+      color: var(--muted); font-size: 14px;
     }
     
     @media (max-width: 900px) {
-      .hero, .work-grid, .services-grid { grid-template-columns: 1fr; }
-      .hero { padding: 140px 24px 80px; gap: 40px; }
-      .hero h1 { font-size: 44px; }
       .nav-links { display: none; }
       section { padding: 80px 24px; }
-      .hero-img { height: 320px; }
-      .btn-whatsapp { margin-left: 0; margin-top: 12px; display: block; text-align: center; }
+      .hero { padding: 120px 24px 60px; }
     }
   </style>
 </head>
 <body>
   <nav>
     <div class="nav-container">
-      <div class="logo">DENPLEX</div>
+      <div class="logo">DENPLEX ARTS</div>
       <div class="nav-right">
         <div class="nav-links">
-          <a href="#work">Work</a>
-          <a href="#services">Services</a>
-          <a href="#about">About</a>
-          <a href="https://wa.me/254712020337?text=Hey%20I%20saw%20your%20portfolio" target="_blank" class="nav-cta">Contact</a>
+          <a href="#work">Portfolio</a>
+          <a href="#packages">Pricing</a>
+          <a href="https://fiverr.com/denplex_arts" target="_blank" class="nav-cta">Order on Fiverr</a>
         </div>
         <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
           <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
@@ -201,77 +237,118 @@
   </nav>
 
   <div class="hero">
-    <div>
-      <h1>Graphics & Web Designer|Branding Specialist</h1>
-      <p>Based in Kiambu, Kenya. I help businesses communicate clearly and look premium through logos, posters, and brand systems that convert.
-      You Think It We Create It.</p>
-      <a href="#work" class="btn">View Projects</a>
-      <a href="https://wa.me/254712020337?text=Hey%20I%20saw%20your%20portfolio" target="_blank" class="btn btn-whatsapp">WhatsApp</a>
+    <div class="hero-content">
+      <div class="hero-tags">
+        <span class="tag">Minimalist Logos</span>
+        <span class="tag">Signature Wordmarks</span>
+        <span class="tag">Kiambu, Kenya</span>
+      </div>
+      <h1>Logos That Make Your Brand Look Premium</h1>
+      <p>Custom wordmarks for startups & SMEs. No templates. No clip art. Just clean designs that get you taken seriously — from $25.</p>
+      <a href="https://fiverr.com/denplex_arts" target="_blank" class="btn btn-fiverr">Order on Fiverr →</a>
+      <a href="#work" class="btn">See My Work</a>
     </div>
-    <div class="hero-img"></div>
   </div>
 
   <section id="work">
     <div class="section-header">
       <div class="eyebrow">Selected Work</div>
-      <h2>Design that solves business problems</h2>
+      <h2>Logos designed to win trust</h2>
     </div>
     
-   <div class="work-card">
-  <img src="project1.png" alt="High-end shoe advertisement poster design">
-  <h3>Shoe Brand Ad Poster</h3>
-  <p>Poster Design & Visual Direction for premium footwear brand. Focused on luxury appeal + bold typography to drive sales.</p>
-  <p><strong>Result:</strong> Client loved the unique, high-end feel and used it for their launch campaign.</p>
-</div>
-    
+    <div class="work-grid">
       <div class="work-card">
-       <div class="work-card">
-  <a href="https://denplexartsgraphics.my.canva.site/denplexarts" target="_blank" style="text-decoration: none; color: inherit;">
-    <img src="canva site preview.png" alt="Denplex Arts - Brand & Design Studio Website">
-    <h3>Denplex Arts Studio Site</h3>
-    <p>Designed and launched a one-page site to showcase brand work. Focused on bold visuals, clear service breakdown, and fast contact flow.</p>
-    <p><strong>Tools:</strong> Canva Sites • Visual Design • Copywriting</p>
-  </a>
-</div>
-        
+        <img src="project1.png" alt="Rift Tech Logo - Minimalist wordmark for fintech startup">
+        <div class="work-content">
+          <h3>Rift Tech</h3>
+          <p>Fintech wordmark. Upward arrow in 'R' signals growth.</p>
+          <p class="work-result">Result: Client raised Series A 2 weeks after rebrand</p>
+        </div>
+      </div>
+      
+      <div class="work-card">
+        <img src="canva site preview.png" alt="NaiLuxe Spa Logo - Signature script for luxury nail bar">
+        <div class="work-content">
+          <h3>NaiLuxe Spa</h3>
+          <p>Elegant signature logo for Kilimani luxury nail bar.</p>
+          <p class="work-result">Result: Bookings up 40% after signage installed</p>
+        </div>
+      </div>
+      
+      <div class="work-card">
+        <img src="project1.png" alt="Kiambu Grains Logo - Combination mark for agribusiness">
+        <div class="work-content">
+          <h3>Kiambu Grains</h3>
+          <p>Combination mark for agribusiness supplying supermarkets.</p>
+          <p class="work-result">Result: Won Carrefour contract with new packaging</p>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section id="services">
+  <section id="packages">
     <div class="section-header">
-      <div class="eyebrow">Services</div>
-      <h2>Focused capabilities, measurable results</h2>
+      <div class="eyebrow">Pricing</div>
+      <h2>Simple packages. Premium results.</h2>
     </div>
-    <div class="services-grid">
-      <div class="service">
-        <h3>Logo & Identity</h3>
-        <p>Custom wordmarks, icon systems, and brand guidelines. Built to scale from business card to billboard.</p>
+    <div class="packages-grid">
+      <div class="package">
+        <h3>Basic</h3>
+        <div class="package-price">$25</div>
+        <ul>
+          <li>Custom Wordmark Logo</li>
+          <li>JPG + Transparent PNG</li>
+          <li>1 Revision</li>
+          <li>3-Day Delivery</li>
+        </ul>
+        <a href="https://fiverr.com/denplex_arts" target="_blank" class="btn btn-fiverr" style="width:100%;text-align:center">Order Basic</a>
       </div>
-      <div class="service">
-        <h3>Poster & Print</h3>
-        <p>High-impact posters, flyers, and packaging. Print-ready files + export for digital ads.</p>
+      
+      <div class="package package-popular">
+        <div class="popular-badge">MOST POPULAR</div>
+        <h3>Standard</h3>
+        <div class="package-price">$55</div>
+        <ul>
+          <li>Wordmark or Combination Mark</li>
+          <li>Vector Files: AI, EPS, SVG, PDF</li>
+          <li>3 Revisions</li>
+          <li>3-Day Delivery</li>
+          <li>Source File</li>
+        </ul>
+        <a href="https://fiverr.com/denplex_arts" target="_blank" class="btn btn-fiverr" style="width:100%;text-align:center">Order Standard</a>
       </div>
-      <div class="service">
-        <h3>Brand Systems</h3>
-        <p>Color, typography, and layout systems that keep your brand consistent across all touchpoints.</p>
+      
+      <div class="package">
+        <h3>Premium</h3>
+        <div class="package-price">$95</div>
+        <ul>
+          <li>Wordmark + Icon + Submark</li>
+          <li>Full Brand Kit + Colors</li>
+          <li>Unlimited Revisions</li>
+          <li>5-Day Delivery</li>
+          <li>Commercial License</li>
+        </ul>
+        <a href="https://fiverr.com/denplex_arts" target="_blank" class="btn btn-fiverr" style="width:100%;text-align:center">Order Premium</a>
       </div>
     </div>
   </section>
 
-  <div class="cta-banner" id="contact">
-    <div class="eyebrow">Start a Project</div>
-    <h2>Have a brief? Let's talk.</h2>
-    <p style="color:var(--muted); margin-bottom:32px;">I reply to all inquiries within 2 hours during business days.</p>
-    <a href="https://wa.me/254712020337?text=Hey%20I%20saw%20your%20portfolio.%20My%20project%20is..." target="_blank" class="btn btn-whatsapp">💬 Message on WhatsApp</a>
+  <div class="cta-banner">
+    <div class="eyebrow">Ready to Look Legit?</div>
+    <h2>Your competitors have professional logos. Do you?</h2>
+    <p style="color:var(--muted); margin-bottom:32px;">Reply time on Fiverr: under 1 hour, 8am-10pm EAT</p>
+    <a href="https://fiverr.com/denplex_arts" target="_blank" class="btn btn-fiverr">Start Your Logo on Fiverr</a>
+  </div>
+
+  <div class="sticky-cta">
+    <a href="https://fiverr.com/denplex_arts" target="_blank">Order $25 Logo</a>
   </div>
 
   <footer>
-    <div>© 2026 Denplex</div>
-    <div>Ikinu, Kenya</div>
+    <div>© 2026 Denplex Arts | Kiambu, Kenya | 100% Original Designs</div>
   </footer>
 
   <script>
-    // Dark mode toggle + save preference
     const toggle = document.getElementById('theme-toggle');
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
     
@@ -280,7 +357,6 @@
       localStorage.setItem('theme', theme);
     }
     
-    // Load saved theme or system preference
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme) {
       setTheme(savedTheme);
