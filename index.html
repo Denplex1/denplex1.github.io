@@ -8,6 +8,7 @@
   <meta name="p:domain_verify" content="609fd5b146191c2c06b54e729163836e"/>
   
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   
   <style>
     :root {
@@ -188,6 +189,54 @@
     }
     .cta-banner h2 { margin: 0 auto 24px; max-width: 600px; }
     
+    /* Contact Section */
+    .contact {
+      padding: 80px 24px;
+      text-align: center;
+      background: var(--bg);
+      border-top: 1px solid var(--border);
+    }
+    .contact h2 {
+      font-size: clamp(28px, 4vw, 36px);
+      margin: 0 0 8px 0;
+    }
+    .contact p {
+      color: var(--muted);
+      margin: 0 0 32px 0;
+      font-size: 16px;
+    }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 14px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .contact-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      background: var(--accent);
+      color: #fff;
+      transition: all 0.2s ease;
+      font-size: 14px;
+    }
+    .contact-btn:hover {
+      transform: translateY(-2px);
+      opacity: 0.9;
+    }
+    .contact-btn.whatsapp {
+      background: #25D366;
+    }
+    .contact-btn i {
+      font-size: 1.1rem;
+    }
+    
     /* Sticky Fiverr Button */
     .sticky-cta {
       position: fixed; bottom: 20px; right: 20px; z-index: 99;
@@ -212,6 +261,15 @@
       section { padding: 80px 24px; }
       .hero { padding: 120px 24px 60px; }
     }
+    
+    @media (max-width: 600px) {
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+      .contact-btn {
+        font-size: 13px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -222,14 +280,15 @@
         <div class="nav-links">
           <a href="#work">Portfolio</a>
           <a href="#packages">Pricing</a>
+          <a href="#contact">Contact</a>
           <a href="https://fiverr.com/denplex_arts" target="_blank" class="nav-cta">Order on Fiverr</a>
         </div>
         <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
           <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
           </svg>
           <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
           </svg>
         </button>
       </div>
@@ -339,6 +398,25 @@
     <p style="color:var(--muted); margin-bottom:32px;">Reply time on Fiverr: under 1 hour, 8am-10pm EAT</p>
     <a href="https://fiverr.com/denplex_arts" target="_blank" class="btn btn-fiverr">Start Your Logo on Fiverr</a>
   </div>
+
+  <section id="contact" class="contact">
+    <h2>Let's Work Together</h2>
+    <p>Message me directly for custom projects or questions</p>
+    <div class="contact-grid">
+      <a href="mailto:empiredenplex979@gmail.com?subject=Logo Inquiry from Website" class="contact-btn">
+        <i class="fa-solid fa-envelope"></i> empiredenplex979@gmail.com
+      </a>
+      <a href="mailto:dmuiruri181@gmail.com?subject=Logo Inquiry from Website" class="contact-btn">
+        <i class="fa-solid fa-envelope"></i> dmuiruri181@gmail.com
+      </a>
+      <a href="https://wa.me/254712020337?text=Hi Denplex, I saw your portfolio and need a logo" target="_blank" class="contact-btn whatsapp">
+        <i class="fa-brands fa-whatsapp"></i> +254 712 020 337
+      </a>
+      <a href="https://wa.me/254727867476?text=Hi Denplex, I saw your portfolio and need a logo" target="_blank" class="contact-btn whatsapp">
+        <i class="fa-brands fa-whatsapp"></i> +254 727 867 476
+      </a>
+    </div>
+  </section>
 
   <div class="sticky-cta">
     <a href="https://fiverr.com/denplex_arts" target="_blank">Order $25 Logo</a>
