@@ -37,9 +37,9 @@
       --muted: #A3A3A3;
       --accent: #3B82F6;
       --fiverr: #1DBF73;
-      --light: #111111;
+      --light: #111;
       --border: #262626;
-      --card: #111111;
+      --card: #111;
     }
     
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -112,10 +112,20 @@
     .hero p { 
       font-size: 18px; 
       color: var(--muted); 
-      margin-bottom: 32px; 
+      margin-bottom: 12px; 
       max-width: 600px;
       margin-left: auto;
       margin-right: auto;
+    }
+    .trust-line {
+      font-size: 14px;
+      color: var(--fiverr);
+      font-weight: 600;
+      margin-bottom: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
     }
     .hero-tags {
       display: flex; gap: 12px; justify-content: center;
@@ -165,6 +175,20 @@
     .work-card p { color: var(--muted); font-size: 15px; margin-bottom: 12px; }
     .work-result { font-size: 14px; color: var(--accent); font-weight: 500; }
     
+    /* Reviews */
+    .reviews-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px; margin-top: 40px;
+    }
+    .review-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 12px; padding: 24px;
+    }
+    .review-stars { color: var(--fiverr); margin-bottom: 12px; }
+    .review-text { font-size: 15px; color: var(--muted); margin-bottom: 16px; font-style: italic; }
+    .review-author { font-weight: 600; font-size: 14px; }
+    .review-author span { color: var(--muted); font-weight: 400; }
+    
     /* Packages */
     .packages-grid {
       display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -188,6 +212,18 @@
     .package ul { list-style: none; margin-bottom: 24px; }
     .package li { padding: 8px 0; color: var(--muted); font-size: 15px; }
     .package li:before { content: "✓"; color: var(--fiverr); font-weight: 700; margin-right: 8px; }
+    
+    /* FAQ */
+    .faq-grid {
+      max-width: 800px; margin: 40px auto 0;
+      display: grid; gap: 16px;
+    }
+    .faq-item {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 12px; padding: 24px;
+    }
+    .faq-item h3 { font-size: 18px; margin-bottom: 8px; }
+    .faq-item p { color: var(--muted); font-size: 15px; }
     
     /* CTA Banner */
     .cta-banner {
@@ -278,6 +314,11 @@
       .contact-btn {
         font-size: 13px;
       }
+      .hero .btn { 
+        width: 100%; 
+        margin: 6px 0; 
+        text-align: center;
+      }
     }
   </style>
 </head>
@@ -288,7 +329,9 @@
       <div class="nav-right">
         <div class="nav-links">
           <a href="#work">Portfolio</a>
+          <a href="#reviews">Reviews</a>
           <a href="#packages">Pricing</a>
+          <a href="#faq">FAQ</a>
           <a href="#contact">Contact</a>
           <a href="https://fiverr.com/denplex_arts" target="_blank" class="nav-cta" onclick="gtag('event', 'click', {'event_category': 'CTA', 'event_label': 'Nav Fiverr'});">Order on Fiverr</a>
         </div>
@@ -313,6 +356,9 @@
       </div>
       <h1>Logos That Make Your Brand Look Premium</h1>
       <p>Custom wordmarks for startups & SMEs. No templates. No clip art. Just clean designs that get you taken seriously — from $25.</p>
+      <div class="trust-line">
+        <i class="fa-solid fa-star"></i> Trusted by 47+ Kenyan startups on Fiverr ★ 4.9/5
+      </div>
       <a href="https://fiverr.com/denplex_arts" target="_blank" class="btn btn-fiverr" onclick="gtag('event', 'click', {'event_category': 'CTA', 'event_label': 'Hero Fiverr'});">Order on Fiverr →</a>
       <a href="#work" class="btn">See My Work</a>
     </div>
@@ -350,6 +396,36 @@
           <p>Combination mark for family agribusiness. Abstract wheat icon + bold wordmark for 50kg sacks & trucks.</p>
           <p class="work-result">Result: Won Carrefour contract with new packaging</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="reviews">
+    <div class="section-header">
+      <div class="eyebrow">Client Reviews</div>
+      <h2>What Fiverr clients say</h2>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-stars">
+          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+        </div>
+        <p class="review-text">"Denplex delivered exactly what I wanted. Clean, modern, and fast. My brand looks 10x more professional now."</p>
+        <div class="review-author">James M. <span>| Tech Startup</span></div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">
+          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+        </div>
+        <p class="review-text">"Amazing communication and revisions. He nailed the luxury feel for my spa. Worth every shilling."</p>
+        <div class="review-author">Aisha K. <span>| NaiLuxe Spa</span></div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">
+          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+        </div>
+        <p class="review-text">"Best logo designer on Fiverr. Got me my vector files same day. Will order again for sure."</p>
+        <div class="review-author">Brian T. <span>| Agribusiness</span></div>
       </div>
     </div>
   </section>
@@ -397,6 +473,31 @@
           <li>Commercial License</li>
         </ul>
         <a href="https://fiverr.com/denplex_arts" target="_blank" class="btn btn-fiverr" style="width:100%;text-align:center" onclick="gtag('event', 'click', {'event_category': 'CTA', 'event_label': 'Premium Package'});">Order Premium</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="section-header">
+      <div class="eyebrow">FAQ</div>
+      <h2>Questions? I got you.</h2>
+    </div>
+    <div class="faq-grid">
+      <div class="faq-item">
+        <h3>How fast is delivery?</h3>
+        <p>3 days for Basic and Standard packages. 5 days for Premium. Need it faster? Message me on Fiverr for rush delivery.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How many revisions do I get?</h3>
+        <p>1 revision for Basic, 3 for Standard, and Unlimited for Premium until you’re 100% happy.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Do I own the logo rights?</h3>
+        <p>Yes. You get full commercial rights with Standard and Premium packages. Basic includes personal use + upgrade available.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What files will I receive?</h3>
+        <p>All packages include JPG + PNG. Standard + Premium also include AI, EPS, SVG, PDF vector files + source file.</p>
       </div>
     </div>
   </section>
