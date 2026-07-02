@@ -590,3 +590,37 @@ body.light .theme-btn{
   border:1px solid #ddd;
   color:#111;
 }
+/* ===== LIGHT MODE TEXT FIX ===== */
+body.light{
+  color:#1a1a1a; /* Darker base text instead of #111 */
+}
+
+body.light .hero-text p,
+body.light .about-text p,
+body.light .contact-info p,
+body.light .portfolio-card p,
+body.light .service-box p,
+body.light .services p,
+body.light .portfolio p {
+  color:#444; /* Dark grey instead of #ccc */
+}
+
+body.light .hero-text h1{
+  color:#0f0f0f; /* Almost black for main headline */
+}
+
+body.light .hero-text h2,
+body.light .about-text h2,
+body.light .contact-info h2,
+body.light .service-box h3,
+body.light .portfolio-card h3,
+body.light footer h2 {
+  color:#d43f5a; /* Darker pink so it pops on white */
+}
+
+body.light nav ul li a{
+  color:#1a1a1a; /* Dark nav links */
+}
+body.light nav ul li a::after{
+  background:#d43f5a; /* Pink underline instead of #222 */
+}
