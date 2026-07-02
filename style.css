@@ -561,3 +561,11 @@ body.light footer{ background:#f2f2f2 !important; }
 body.light .socials a{ color:#1a1a1a !important; }
 body.light .socials a:hover{ color:#d43f5a !important; }
 body.light #topBtn{ background:#d43f5a !important; }
+#typed-text{
+  border-right: 3px solid #ff6b81;
+  animation: blink.7s step-end infinite;
+}
+@keyframes blink{
+ 50%{ border-color: transparent; }
+}
+body.light #typed-text{ border-right-color:#d43f5a; }
