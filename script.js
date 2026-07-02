@@ -29,28 +29,28 @@ if(topBtn){
   topBtn.onclick = () => window.scrollTo({top: 0, behavior: 'smooth'});
 }
 
-// 3. Dark / Light Mode Toggle
-const toggleBtn = document.getElementById('themeToggle');
-const body = document.body;
+// 3. Dark / Light Mode Toggle - CLEAN VERSION
+document.addEventListener('DOMContentLoaded', () => {
+  const toggleBtn = document.getElementById('themeToggle');
+  const body = document.body;
 
-if(toggleBtn){ // <-- prevents error if button missing
-  // Load saved theme
-  if(localStorage.getItem('theme') === 'light'){
-    body.classList.add('light');
-    toggleBtn.textContent = '🌙';
-  } else {
-    toggleBtn.textContent = '☀️';
-  }
-
-  // Toggle on click
-  toggleBtn.addEventListener('click', () => {
-    body.classList.toggle('light');
-    if(body.classList.contains('light')){
-      localStorage.setItem('theme', 'light');
+  if(toggleBtn){
+    if(localStorage.getItem('theme') === 'light'){
+      body.classList.add('light');
       toggleBtn.textContent = '🌙';
     } else {
-      localStorage.setItem('theme', 'dark');
       toggleBtn.textContent = '☀️';
     }
-  });
-}
+
+    toggleBtn.addEventListener('click', () => {
+      body.classList.toggle('light');
+      if(body.classList.contains('light')){
+        localStorage.setItem('theme', 'light');
+        toggleBtn.textContent = '🌙';
+      } else {
+        localStorage.setItem('theme', 'dark');
+        toggleBtn.textContent = '☀️';
+      }
+    });
+  }
+});
