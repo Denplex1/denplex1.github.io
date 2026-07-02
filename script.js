@@ -54,3 +54,33 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+// 4. Typing Effect
+document.addEventListener('DOMContentLoaded', () => {
+  const typedTextSpan = document.getElementById("typed-text");
+  if(typedTextSpan){
+    const textArray = ["David Muiruri", "a Web Developer", "a UI/UX Designer"];
+    let textArrayIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+
+    function type() {
+      const current = textArray[textArrayIndex];
+      if (isDeleting) {
+        typedTextSpan.textContent = current.substring(0, charIndex--);
+      } else {
+        typedTextSpan.textContent = current.substring(0, charIndex++);
+      }
+
+      if (!isDeleting && charIndex === current.length) {
+        setTimeout(() => isDeleting = true, 2000); // pause 2s
+      } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        textArrayIndex = (textArrayIndex + 1) % textArray.length;
+      }
+
+      const typingSpeed = isDeleting? 50 : 100;
+      setTimeout(type, typingSpeed);
+    }
+    type();
+  }
+});
