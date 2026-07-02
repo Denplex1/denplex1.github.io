@@ -492,3 +492,54 @@ footer p{
     color:#777;
 
 }
+/* 1. Smooth scroll for the whole site */
+html { scroll-behavior: smooth; }
+
+/* 2. Make buttons pop on hover */
+.btn, .btn-outline {
+  transition: all 0.3s ease;
+}
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+.btn-outline:hover {
+  background: #222;
+  color: #fff;
+  transform: translateY(-3px);
+}
+
+/* 3. Portfolio cards lift up */
+.portfolio-card {
+  transition: all 0.3s ease;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.portfolio-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+}
+.portfolio-card img {
+  transition: transform 0.4s ease;
+}
+.portfolio-card:hover img {
+  transform: scale(1.05);
+}
+
+/* 4. Nav link underline animation */
+nav ul li a {
+  position: relative;
+}
+nav ul li a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background: #222;
+  transition: width 0.3s ease;
+}
+nav ul li a:hover::after {
+  width: 100%;
+}
