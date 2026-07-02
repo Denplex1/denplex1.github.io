@@ -7,7 +7,7 @@ html{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Poppins, sans-serif;
+    font-family:Poppins, "Apple Color Emoji", "Segoe UI Emoji", Segoe UI Symbol",sans-serif;
 }
 
 body{
@@ -546,4 +546,47 @@ nav ul li a::after {
 }
 nav ul li a:hover::after {
   width: 100%;
+}
+/* ===== THEME TOGGLE ===== */
+.theme-btn{
+  background:#1f1f1f;
+  border:1px solid #333;
+  color:#fff;
+  font-size:20px;
+  width:44px;
+  height:44px;
+  border-radius:50%;
+  cursor:pointer;
+  transition:.3s;
+}
+.theme-btn:hover{
+  transform:scale(1.1);
+  border-color:#ff6b81;
+}
+
+/* ===== LIGHT MODE COLORS ===== */
+body.light{
+  background:#f7f7f7;
+  color:#111;
+}
+body.light nav{
+  background:rgba(255,255,255,.9);
+}
+body.light .service-box,
+body.light .portfolio-card{
+  background:#fff;
+  border:1px solid #e5e5e5;
+}
+body.light .hero{
+  background: radial-gradient(1200px 600px at 80% -10%, rgba(255,107,129,.10), transparent 60%),
+              linear-gradient(180deg, #ffffff, #f2f2f2);
+}
+body.light .btn-outline{
+  border:2px solid #ff6b81;
+  color:#111;
+}
+body.light .theme-btn{
+  background:#fff;
+  border:1px solid #ddd;
+  color:#111;
 }
