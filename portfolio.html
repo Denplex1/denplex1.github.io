@@ -1,20 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio | David Muiruri</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Denplex Arts | Web & Graphic Designer</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
-  <nav>
+   
+<header>
+
+<nav>
     <div class="logo">David.</div>
     <ul id="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="index.html#about">About</a></li>
-      <li><a href="index.html#services">Services</a></li>
-      <li><a href="portfolio.html">Portfolio</a></li>
-      <li><a href="index.html#contact">Contact</a></li>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
     <div class="nav-right">
       <button id="theme-toggle" class="theme-btn">☀️</button>
@@ -24,47 +32,305 @@
         <span></span>
       </div>
     </div>
-  </nav>
+</nav>
 
-  <section class="portfolio" style="padding-top:120px;">
-    <h2>All My Work</h2>
-    <p>Browse my full collection of projects</p>
+<section class="hero" id="home">
+
+<div class="hero-text">
+
+<h3>Hello, I'm</h3>
+
+<h1>Hi, I'm <span id="typed-text"></span></h1>
+
+<h2>
+Building Modern Websites &
+Creative Graphic Designs
+</h2>
+
+<p>
+I help businesses and brands stand out through beautiful,
+responsive websites and creative graphic design solutions.
+Whether you need a business website, logo, poster or complete
+branding, Denplex Arts is here to bring your ideas to life.
+</p>
+
+<div class="buttons">
+
+<a href="#" class="btn">Hire Me</a>
+
+<a href="#" class="btn-outline">View Portfolio</a>
+
+</div>
+
+</div>
+
+<div class="hero-image">
+
+<img src="images/profile.jpg" alt="Profile">
+
+</div>
+
+</section>
+
+</header>
+<section class="about fade" id="about">
+
+    <div class="about-image">
+        <img src="images/profile.jpg" alt="David Muiruri">
+    </div>
+
+    <div class="about-text">
+
+        <h2>About Me</h2>
+
+        <p>
+            Hello! I'm <strong>David Muiruri</strong>, the founder of
+            <strong>Denplex Arts</strong>. I specialize in creating modern,
+            responsive websites and eye-catching graphic designs that help
+            businesses grow their online presence.
+        </p>
+
+        <p>
+            My expertise includes web development, branding, logo design,
+            posters, flyers, business cards, UI/UX design, and digital
+            marketing materials.
+        </p>
+
+        <a href="#" class="btn">Download CV</a>
+
+    </div>
+
+</section>
+
+<section class="services fade" id="services">
+
+    <h2>My Services</h2>
+
+    <p>I provide creative digital solutions for businesses and individuals.</p>
+
+    <div class="service-container">
+
+        <div class="service-box">
+            <h3>?? Web Design</h3>
+            <p>
+                Modern, responsive and professional websites for businesses,
+                organizations and personal brands.
+            </p>
+        </div>
+
+        <div class="service-box">
+            <h3>?? Graphic Design</h3>
+            <p>
+                Logos, posters, flyers, business cards, banners and branding
+                materials.
+            </p>
+        </div>
+
+        <div class="service-box">
+            <h3>?? Web Development</h3>
+            <p>
+                Fast, secure and mobile-friendly websites using modern
+                technologies.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+<section class="skills fade" id="skills">
+
+    <h2>My Skills</h2>
+
+    <div class="skill">
+
+        <div class="skill-title">
+            <span>HTML</span>
+            <span>95%</span>
+        </div>
+
+        <div class="skill-bar">
+            <div class="skill-fill html"></div>
+        </div>
+
+    </div>
+
+    <div class="skill">
+
+        <div class="skill-title">
+            <span>CSS</span>
+            <span>90%</span>
+        </div>
+
+        <div class="skill-bar">
+            <div class="skill-fill css"></div>
+        </div>
+
+    </div>
+
+    <div class="skill">
+
+        <div class="skill-title">
+            <span>JavaScript</span>
+            <span>80%</span>
+        </div>
+
+        <div class="skill-bar">
+            <div class="skill-fill js"></div>
+        </div>
+
+    </div>
+
+    <div class="skill">
+
+        <div class="skill-title">
+            <span>Graphic Design</span>
+            <span>95%</span>
+        </div>
+
+        <div class="skill-bar">
+            <div class="skill-fill design"></div>
+        </div>
+
+    </div>
+
+    <div class="skill">
+
+        <div class="skill-title">
+            <span>WordPress</span>
+            <span>85%</span>
+        </div>
+
+        <div class="skill-bar">
+            <div class="skill-fill wordpress"></div>
+        </div>
+
+    </div>
+
+</section>
+<section class="portfolio fade" id="portfolio">
+
+    <h2>My Portfolio</h2>
+
+    <p>Some of my recent work in web design and graphic design.</p>
+
     <div class="portfolio-container">
-      <div class="portfolio-card fade">
-        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=260" alt="Project 1">
-        <h3>E-commerce Site</h3>
-        <p>Full responsive shop with cart and payments.</p>
-      </div>
-      <div class="portfolio-card fade">
-        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=260" alt="Project 2">
-        <h3>Agency Website</h3>
-        <p>Modern portfolio for a creative agency.</p>
-      </div>
-      <div class="portfolio-card fade">
-        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=260" alt="Project 3">
-        <h3>Restaurant Site</h3>
-        <p>Menu, booking system, and online orders.</p>
-      </div>
-      <div class="portfolio-card fade">
-        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=260" alt="Project 4">
-        <h3>Fitness App Landing</h3>
-        <p>High-converting landing page for a gym app.</p>
-      </div>
-    </div>
-  </section>
 
-  <footer>
-    <h2>David Muiruri</h2>
-    <p>Web Developer & Designer based in Kenya</p>
+        <div class="portfolio-card">
+            <img src="images/project1.jpg" alt="Website Design">
+            <h3>Business Website</h3>
+            <p>Modern responsive website for a business.</p>
+        </div>
+
+        <div class="portfolio-card">
+            <img src="images/project2.jpg" alt="Logo Design">
+            <h3>Logo Design</h3>
+            <p>Creative logo designed for a startup company.</p>
+        </div>
+
+        <div class="portfolio-card">
+            <img src="images/project3.jpg" alt="Poster Design">
+            <h3>Event Poster</h3>
+            <p>Professional promotional poster design.</p>
+        </div>
+
+        <div class="portfolio-card">
+            <img src="images/project4.jpg" alt="Branding">
+            <h3>Brand Identity</h3>
+            <p>Complete branding package for a client.</p>
+        </div>
+
+    </div>
+
+</section>
+<section class="stats fade">
+
+    <div class="stat-box">
+        <h2>50+</h2>
+        <p>Projects Completed</p>
+    </div>
+
+    <div class="stat-box">
+        <h2>30+</h2>
+        <p>Happy Clients</p>
+    </div>
+
+    <div class="stat-box">
+        <h2>5+</h2>
+        <p>Years Experience</p>
+    </div>
+
+    <div class="stat-box">
+        <h2>100%</h2>
+        <p>Client Satisfaction</p>
+    </div>
+
+</section>
+<section class="contact fade" id="contact">
+
+    <div class="contact-info">
+
+        <h2>Let's Work Together</h2>
+
+        <p>
+            Have a project in mind? I'd love to hear from you.
+            Send me a message and let's build something amazing.
+        </p>
+
+        <h3>Email</h3>
+        <p>empiredenplex979@gmail.com</p>
+
+        <h3>Phone</h3>
+        <p>+254 7-12-02-03-37</p>
+
+    </div>
+
+    <div class="contact-form">
+
+        <form>
+
+            <input type="text" placeholder="Your Name">
+
+            <input type="email" placeholder="Your Email">
+
+            <input type="text" placeholder="Subject">
+
+            <textarea placeholder="Your Message"></textarea>
+
+            <button class="btn">Send Message</button>
+
+        </form>
+
+    </div>
+
+</section>
+<button id="topBtn">?</button>
+<footer>
+
+    <h2>Denplex Arts</h2>
+
+    <p>Designing Creative Websites & Graphics</p>
+
     <div class="socials">
-      <a href="#">Twitter</a>
-      <a href="#">LinkedIn</a>
-      <a href="#">GitHub</a>
-    </div>
-    <div class="copyright">© 2026 David Muiruri. All Rights Reserved.</div>
-  </footer>
 
-  <button id="topBtn">↑</button>
-  <script src="script.js"></script>
+        <a href="#">Facebook</a>
+
+        <a href="#">LinkedIn</a>
+
+        <a href="#">GitHub</a>
+
+        <a href="#">WhatsApp</a>
+
+    </div>
+
+    <p class="copyright">
+
+        © 2026 Denplex Arts. All Rights Reserved.
+
+    </p>
+
+</footer>
+
+<script src="script.js"></script>
+
 </body>
 </html>
