@@ -247,6 +247,47 @@
       .compare-table th, .compare-table td { padding: 12px 10px; }
     }
   </style>
+  <style>
+/* ===== MOBILE MENU ADD-ON ===== */
+.nav-right{ display: flex; align-items: center; gap: 15px; }
+
+.hamburger{
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  z-index: 1001;
+}
+.hamburger span{
+  width: 25px;
+  height: 3px;
+  background: #fff;
+  transition: 0.3s;
+  display: block;
+}
+.hamburger.active span:nth-child(1){ transform: rotate(45deg) translate(8px, 8px); }
+.hamburger.active span:nth-child(2){ opacity: 0; }
+.hamburger.active span:nth-child(3){ transform: rotate(-45deg) translate(7px, -7px); }
+
+@media(max-width: 768px){
+.hamburger{ display: flex; }
+  #nav-links{
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    height: 100vh;
+    background: #111;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    transition: right 0.3s ease;
+    z-index: 1000;
+  }
+  #nav-links.active{ right: 0; }
+}
+</style>
 </head>
 <body>
   <nav>
@@ -386,5 +427,49 @@
       setTheme(current === 'dark' ? 'light' : 'dark');
     });
   </script>
+ <script>
+document.addEventListener('DOMContentLoaded', () => {
+
+  // 1. Mobile Menu
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('nav-links');
+  if(hamburger && navLinks){
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      hamburger.classList.toggle('active');
+    });
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        hamburger.classList.remove('active');
+      });
+    });
+  }
+
+  // 2. Theme Toggle - only if button exists
+  const themeToggle = document.getElementById('theme-toggle');
+  if(themeToggle){
+    themeToggle.addEventListener('click', () => {
+      document.body.classList.toggle('light');
+      themeToggle.textContent = document.body.classList.contains('light')? '🌙' : '☀️';
+    });
+  }
+
+  // 3. Typing Effect - only if span exists
+  const typedText = document.getElementById('typed-text');
+  if(typedText){
+    const words = ["David Muiruri", "a Web Developer", "a Designer"];
+    let i = 0, j = 0, isDeleting = false;
+    function type() {
+      let current = words[i];
+      typedText.textContent = isDeleting? current.substring(0, j--) : current.substring(0, j++);
+      if (!isDeleting && j === current.length + 1) { isDeleting = true; setTimeout(type, 1500); return; }
+      if (isDeleting && j === 0) { isDeleting = false; i = (i + 1) % words.length; }
+      setTimeout(type, isDeleting? 50 : 100);
+    }
+    type();
+  }
+});
+</script> 
 </body>
 </html>
