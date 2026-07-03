@@ -1,4 +1,3 @@
-console.log("JS is loading"); 
 // 1. Fade in sections as you scroll
 const faders = document.querySelectorAll('.fade');
 const appearOptions = { threshold: 0.2, rootMargin: "0px 0px -50px 0px" };
