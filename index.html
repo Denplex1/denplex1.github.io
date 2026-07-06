@@ -8,115 +8,123 @@
 
     <style>
         :root{
-            --bg: #030303; --card: #0A0A0A; --text: #E5E5E5;
-            --muted: #737373; --accent: #3B82F6; --accent2: #06B6D4; --border: #1F1F1F;
+            --bg: #000000; --card: #0A0A0A; --text: #E5E5E5;
+            --muted: #737373; --accent: #00FF88; --accent2: #3B82F6; --border: #1F1F1F;
         }
         *{ margin: 0; padding: 0; box-sizing: border-box; }
         html{ scroll-behavior: smooth; }
-        body{ font-family: 'Manrope', sans-serif; background: var(--bg); color: var(--text); }
+        body{ font-family: 'Manrope', sans-serif; background: var(--bg); color: var(--text); overflow-x: hidden; }
 
-        /* TECH GRID BACKGROUND */
+        /* 1. MATRIX RAIN BACKGROUND */
+        #matrix{
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            z-index: -3; opacity: 0.08;
+        }
+
+        /* TECH GRID */
         body::before{
             content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background-image: linear-gradient(rgba(59,130,246,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(59,130,246,0.05) 1px, transparent 1px);
-            background-size: 50px 50px; z-index: -2; animation: gridMove 20s linear infinite;
+            background-image: linear-gradient(rgba(0,255,136,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0,255,136,0.03) 1px, transparent 1px);
+            background-size: 50px 50px; z-index: -2;
         }
-        @keyframes gridMove{ from{ transform: translate(0,0); } to{ transform: translate(50px, 50px); } }
 
         /* NAV */
-        nav{ position: fixed; top: 0; width: 100%; background: rgba(3,3,3,0.7); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 16px 5%; }
-       .logo{ font-weight: 800; font-size: 20px; letter-spacing: -1px; }.logo span{ color: var(--accent); }
+        nav{ position: fixed; top: 0; width: 100%; background: rgba(0,0,0,0.8); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 16px 5%; }
+      .logo{ font-weight: 800; font-size: 20px; letter-spacing: -1px; }.logo span{ color: var(--accent); }
         #nav-links{ display: flex; list-style: none; gap: 30px; }
         #nav-links a{ color: var(--muted); text-decoration: none; font-weight: 600; font-size: 14px; transition: 0.2s; }
         #nav-links a:hover{ color: var(--accent); }
-       .btn-nav{ background: var(--accent); color: white!important; padding: 8px 16px; border-radius: 6px; }
-       .hamburger{ display: none; flex-direction: column; gap: 5px; cursor: pointer; }
-       .hamburger span{ width: 22px; height: 2px; background: var(--text); transition: 0.3s; }
+      .btn-nav{ background: var(--accent); color: #000!important; padding: 8px 16px; border-radius: 6px; font-weight: 700; }
+      .hamburger{ display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+      .hamburger span{ width: 22px; height: 2px; background: var(--text); transition: 0.3s; }
 
         /* HERO */
-       .hero{ min-height: 100vh; display: flex; align-items: center; padding: 120px 5% 80px; gap: 60px; max-width: 1300px; margin: 0 auto; }
-       .hero-text{ flex: 1; }
-       .badge{ display: inline-block; border: 1px solid var(--border); padding: 6px 12px; border-radius: 50px; font-size: 12px; color: var(--muted); font-family: 'JetBrains Mono'; margin-bottom: 20px; }
-       .hero-text h1{ font-size: clamp(45px, 7vw, 72px); line-height: 1.1; font-weight: 800; letter-spacing: -2px; }
-       .hero-text h1 span{ color: var(--accent); }
-       .hero-text p{ color: var(--muted); max-width: 500px; margin: 20px 0 30px; font-size: 18px; }
-       .btn{ background: var(--accent); color: white; padding: 14px 28px; border-radius: 8px; text-decoration: none; font-weight: 700; display: inline-block; transition: 0.2s; border: 1px solid var(--accent); }
-       .btn:hover{ background: transparent; color: var(--accent); }
-       .btn-outline{ border: 1px solid var(--border); color: var(--text); padding: 14px 28px; border-radius: 8px; text-decoration: none; font-weight: 700; margin-left: 12px; }
-       .btn-outline:hover{ border-color: var(--accent); }
+      .hero{ min-height: 100vh; display: flex; align-items: center; padding: 120px 5% 80px; gap: 60px; max-width: 1300px; margin: 0 auto; position: relative; z-index: 1; }
+      .hero-text{ flex: 1; }
+      .badge{ display: inline-block; border: 1px solid var(--accent); padding: 6px 12px; border-radius: 50px; font-size: 12px; color: var(--accent); font-family: 'JetBrains Mono'; margin-bottom: 20px; background: rgba(0,255,136,0.1); }
+      .hero-text h1{ font-size: clamp(45px, 7vw, 72px); line-height: 1.1; font-weight: 800; letter-spacing: -2px; }
+      .hero-text h1 span{ color: var(--accent); }
+      .hero-text p{ color: var(--muted); max-width: 500px; margin: 20px 0 30px; font-size: 18px; }
+      .btn{ background: var(--accent); color: #000; padding: 14px 28px; border-radius: 8px; text-decoration: none; font-weight: 700; display: inline-block; transition: 0.2s; border: 1px solid var(--accent); }
+      .btn:hover{ background: transparent; color: var(--accent); }
+      .btn-outline{ border: 1px solid var(--border); color: var(--text); padding: 14px 28px; border-radius: 8px; text-decoration: none; font-weight: 700; margin-left: 12px; }
+      .btn-outline:hover{ border-color: var(--accent); }
 
-        /* 1. TERMINAL ANIMATION */
-       .hero-image{ flex: 1; position: relative; }
-       .terminal{
-            background: #0A0A0A; border: 1px solid var(--border); border-radius: 12px;
-            padding: 20px; font-family: 'JetBrains Mono'; font-size: 14px;
-            box-shadow: 0 0 40px rgba(59,130,246,0.1);
+        /* TERMINAL */
+      .hero-image{ flex: 1; position: relative; }
+      .terminal{
+            background: #0A0A0A; border: 1px solid var(--accent); border-radius: 12px;
+            padding: 20px; font-family: 'JetBrains Mono'; font-size: 13px;
+            box-shadow: 0 0 40px rgba(0,255,136,0.15); height: 350px; overflow-y: auto;
         }
-       .terminal-header{ display: flex; gap: 8px; margin-bottom: 15px; }
-       .dot{ width: 12px; height: 12px; border-radius: 50%; }
-       .dot.red{ background: #EF4444; }.dot.yellow{ background: #F59E0B; }.dot.green{ background: #10B981; }
-       .terminal-body{ color: var(--muted); }
-       .line{ margin-bottom: 8px; }
-       .prompt{ color: var(--accent2); }
-       .command{ color: var(--text); }
-       .cursor{ display: inline-block; width: 8px; height: 18px; background: var(--accent); animation: blink 1s infinite; }
+      .terminal-header{ display: flex; gap: 8px; margin-bottom: 15px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
+      .dot{ width: 12px; height: 12px; border-radius: 50%; }
+      .dot.red{ background: #EF4444; }.dot.yellow{ background: #F59E0B; }.dot.green{ background: var(--accent); }
+      .terminal-body{ color: var(--muted); }
+      .line{ margin-bottom: 6px; white-space: pre-wrap; }
+      .prompt{ color: var(--accent); }
+      .command{ color: var(--text); }
+      .keyword{ color: var(--accent2); }
+      .string{ color: #FBBF24; }
+      .cursor{ display: inline-block; width: 8px; height: 16px; background: var(--accent); animation: blink 1s infinite; }
         @keyframes blink{ 50%{ opacity: 0; } }
 
-        /* 2. PROFILE PHOTO WITH NAME BADGE */
-       .profile-wrap{ position: relative; margin-top: 30px; }
-       .profile-wrap img{
-            width: 100%; border-radius: 16px; border: 1px solid var(--border);
-        }
-       .name-badge{
+        /* PROFILE WITH NAME BADGE */
+      .profile-wrap{ position: relative; margin-top: 30px; }
+      .profile-wrap img{ width: 100%; border-radius: 16px; border: 1px solid var(--accent); }
+      .name-badge{
             position: absolute; bottom: 15px; left: 15px;
-            background: rgba(3,3,3,0.8); backdrop-filter: blur(10px);
-            border: 1px solid var(--accent); padding: 10px 16px; border-radius: 8px;
+            background: rgba(0,0,0,0.85); backdrop-filter: blur(10px);
+            border: 1px solid var(--accent); padding: 12px 18px; border-radius: 8px;
             font-weight: 700; font-size: 16px;
         }
-       .name-badge span{ color: var(--accent); font-family: 'JetBrains Mono'; font-size: 12px; display: block; }
+      .name-badge span{ color: var(--accent); font-family: 'JetBrains Mono'; font-size: 12px; display: block; }
 
         /* SECTIONS */
-        section{ padding: 100px 5%; max-width: 1300px; margin: 0 auto; }
-       .section-header{ text-align: center; margin-bottom: 60px; }
-       .section-header h2{ font-size: 42px; font-weight: 800; letter-spacing: -1.5px; }
-       .section-header p{ color: var(--muted); }
-       .service-container{ display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; }
-       .service-box{ background: var(--card); padding: 30px; border-radius: 12px; border: 1px solid var(--border); transition: 0.3s; position: relative; overflow: hidden; }
-       .service-box:hover{ border-color: var(--accent); transform: translateY(-4px); }
-       .service-box::before{ content: ''; position: absolute; top: 0; left: 0; width: 0; height: 2px; background: linear-gradient(90deg, var(--accent), var(--accent2)); transition: 0.4s; }
-       .service-box:hover::before{ width: 100%; }
-       .service-icon{ font-size: 32px; margin-bottom: 16px; }
-       .portfolio-container{ display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 20px; }
-       .portfolio-card{ background: var(--card); border-radius: 12px; overflow: hidden; border: 1px solid var(--border); transition: 0.3s; }
-       .portfolio-card:hover{ border-color: var(--accent); }
-       .portfolio-card img{ width: 100%; height: 250px; object-fit: cover; }
-       .portfolio-content{ padding: 20px; }
-       .tag{ font-size: 11px; color: var(--accent); border: 1px solid var(--accent); padding: 4px 10px; border-radius: 4px; font-family: 'JetBrains Mono'; }
-       .skill{ margin-bottom: 20px; }
-       .skill-title{ display: flex; justify-content: space-between; font-size: 14px; margin-bottom: 8px; font-family: 'JetBrains Mono'; }
-       .skill-bar{ height: 4px; background: var(--border); border-radius: 2px; overflow: hidden; }
-       .skill-fill{ height: 100%; background: linear-gradient(90deg, var(--accent), var(--accent2)); border-radius: 2px; }
-       .stats{ display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; text-align: center; }
-       .stat-box{ background: var(--card); padding: 30px; border-radius: 12px; border: 1px solid var(--border); }
-       .stat-box h2{ font-size: 40px; color: var(--accent); }
-       .contact{ display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
-       .contact-form input,.contact-form textarea{ width: 100%; padding: 14px; margin-bottom: 15px; background: var(--card); border: 1px solid var(--border); color: var(--text); border-radius: 8px; font-family: 'Manrope'; }
-       .contact-form input:focus,.contact-form textarea:focus{ outline: none; border-color: var(--accent); }
+        section{ padding: 100px 5%; max-width: 1300px; margin: 0 auto; position: relative; z-index: 1; }
+      .section-header{ text-align: center; margin-bottom: 60px; }
+      .section-header h2{ font-size: 42px; font-weight: 800; letter-spacing: -1.5px; }
+      .section-header p{ color: var(--muted); }
+      .service-container{ display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; }
+      .service-box{ background: var(--card); padding: 30px; border-radius: 12px; border: 1px solid var(--border); transition: 0.3s; position: relative; overflow: hidden; }
+      .service-box:hover{ border-color: var(--accent); transform: translateY(-4px); box-shadow: 0 0 20px rgba(0,255,136,0.1); }
+      .service-box::before{ content: ''; position: absolute; top: 0; left: 0; width: 0; height: 2px; background: var(--accent); transition: 0.4s; }
+      .service-box:hover::before{ width: 100%; }
+      .service-icon{ font-size: 32px; margin-bottom: 16px; }
+      .portfolio-container{ display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 20px; }
+      .portfolio-card{ background: var(--card); border-radius: 12px; overflow: hidden; border: 1px solid var(--border); transition: 0.3s; }
+      .portfolio-card:hover{ border-color: var(--accent); }
+      .portfolio-card img{ width: 100%; height: 250px; object-fit: cover; }
+      .portfolio-content{ padding: 20px; }
+      .tag{ font-size: 11px; color: var(--accent); border: 1px solid var(--accent); padding: 4px 10px; border-radius: 4px; font-family: 'JetBrains Mono'; background: rgba(0,255,136,0.1); }
+      .skill{ margin-bottom: 20px; }
+      .skill-title{ display: flex; justify-content: space-between; font-size: 14px; margin-bottom: 8px; font-family: 'JetBrains Mono'; }
+      .skill-bar{ height: 4px; background: var(--border); border-radius: 2px; overflow: hidden; }
+      .skill-fill{ height: 100%; background: var(--accent); border-radius: 2px; }
+      .stats{ display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; text-align: center; }
+      .stat-box{ background: var(--card); padding: 30px; border-radius: 12px; border: 1px solid var(--border); }
+      .stat-box h2{ font-size: 40px; color: var(--accent); }
+      .contact{ display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
+      .contact-form input,.contact-form textarea{ width: 100%; padding: 14px; margin-bottom: 15px; background: var(--card); border: 1px solid var(--border); color: var(--text); border-radius: 8px; font-family: 'Manrope'; }
+      .contact-form input:focus,.contact-form textarea:focus{ outline: none; border-color: var(--accent); }
         footer{ text-align: center; padding: 40px 5%; border-top: 1px solid var(--border); color: var(--muted); }
-       .fade{ opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
-       .fade.visible{ opacity: 1; transform: translateY(0); }
+      .fade{ opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
+      .fade.visible{ opacity: 1; transform: translateY(0); }
         @media(max-width: 900px){
             #nav-links{ display: none; position: fixed; top: 0; right: 0; width: 70%; height: 100vh; background: var(--card); flex-direction: column; padding-top: 80px; border-left: 1px solid var(--border); }
             #nav-links.active{ display: flex; }
             #nav-links a{ padding: 15px 30px; border-bottom: 1px solid var(--border); }
-           .hamburger{ display: flex; }
-           .hero{ flex-direction: column; }
-           .contact,.stats{ grid-template-columns: 1fr; }
+          .hamburger{ display: flex; }
+          .hero{ flex-direction: column; }
+          .contact,.stats{ grid-template-columns: 1fr; }
         }
     </style>
 </head>
 
 <body>
+
+<!-- MATRIX CANVAS -->
+<canvas id="matrix"></canvas>
 
 <nav>
     <div class="logo">DENPLEX<span>.ARTS</span></div>
@@ -143,21 +151,15 @@
 </div>
 
 <div class="hero-image fade">
-    <!-- TERMINAL ANIMATION -->
+    <!-- TERMINAL -->
     <div class="terminal">
         <div class="terminal-header">
             <div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div>
         </div>
-        <div class="terminal-body" id="terminal-body">
-            <div class="line"><span class="prompt">$</span> <span class="command">npm run build</span></div>
-            <div class="line">Compiling portfolio...</div>
-            <div class="line">✓ Optimized for performance</div>
-            <div class="line">✓ Responsive on all devices</div>
-            <div class="line"><span class="prompt">$</span> <span class="command">git push origin main</span><span class="cursor"></span></div>
-        </div>
+        <div class="terminal-body" id="terminal-body"></div>
     </div>
 
-    <!-- PROFILE PHOTO WITH NAME -->
+    <!-- PROFILE -->
     <div class="profile-wrap">
         <img src="images/profile.jpg" alt="David Muiruri">
         <div class="name-badge">
@@ -215,38 +217,68 @@
 <footer>© 2026 Denplex Arts. Built with clean code.</footer>
 
 <script>
-// Mobile Menu
+// 1. MATRIX RAIN EFFECT
+const canvas = document.getElementById('matrix');
+const ctx = canvas.getContext('2d');
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+const chars = "01DENPLEXARTS{}[]<>/\\|";
+const fontSize = 14;
+const columns = canvas.width / fontSize;
+const drops = [];
+for(let i = 0; i < columns; i++) drops[i] = 1;
+function drawMatrix(){
+    ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = '#00FF88';
+    ctx.font = fontSize + 'px JetBrains Mono';
+    for(let i = 0; i < drops.length; i++){
+        const text = chars[Math.floor(Math.random() * chars.length)];
+        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+        if(drops[i] * fontSize > canvas.height && Math.random() > 0.975) drops[i] = 0;
+        drops[i]++;
+    }
+}
+setInterval(drawMatrix, 35);
+window.addEventListener('resize', () => { canvas.width = window.innerWidth; canvas.height = window.innerHeight; });
+
+// 2. MOBILE MENU
 const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('nav-links');
 hamburger.addEventListener('click', () => { navLinks.classList.toggle('active'); });
 
-// Scroll Animation
+// 3. SCROLL ANIMATION
 const faders = document.querySelectorAll('.fade');
 const appearOnScroll = new IntersectionObserver((entries) => {
   entries.forEach(entry => { if(entry.isIntersecting){ entry.target.classList.add('visible'); } });
 }, { threshold: 0.15 });
 faders.forEach(fader => appearOnScroll.observe(fader));
 
-// 3. TERMINAL TYPING ANIMATION
-const terminalLines = [
-    '<div class="line"><span class="prompt">$</span> <span class="command">npm run build</span></div>',
-    '<div class="line">Compiling portfolio...</div>',
-    '<div class="line">✓ Optimized for performance</div>',
-    '<div class="line">✓ Responsive on all devices</div>',
-    '<div class="line"><span class="prompt">$</span> <span class="command">git push origin main</span><span class="cursor"></span></div>'
+// 4. TERMINAL TYPES REAL CODE FROM YOUR PROJECTS
+const codeSnippets = [
+    '<span class="prompt">$</span> <span class="command">git clone denplex-portfolio</span>',
+    '<span class="keyword">const</span> skills = [<span class="string">"HTML"</span>, <span class="string">"CSS"</span>, <span class="string">"JavaScript"</span>, <span class="string">"UI/UX"</span>];',
+    '<span class="keyword">function</span> buildWebsite(client) {',
+    ' <span class="keyword">return</span> <span class="string">`Responsive + Fast + SEO Ready`</span>;',
+    '}',
+    '<span class="prompt">$</span> <span class="command">npm run deploy --project="Business Website"</span>',
+    '<span class="keyword">export default</span> DenplexArts;',
+    '<span class="prompt">$</span> <span class="command">_</span><span class="cursor"></span>'
 ];
-let lineIndex = 0;
+let line = 0;
 const terminalBody = document.getElementById('terminal-body');
-terminalBody.innerHTML = '';
-function typeTerminal(){
-    if(lineIndex < terminalLines.length){
-        terminalBody.innerHTML += terminalLines[lineIndex];
+function typeCode(){
+    if(line < codeSnippets.length){
+        const div = document.createElement('div');
+        div.className = 'line';
+        div.innerHTML = codeSnippets[line];
+        terminalBody.appendChild(div);
         terminalBody.scrollTop = terminalBody.scrollHeight;
-        lineIndex++;
-        setTimeout(typeTerminal, 800);
+        line++;
+        setTimeout(typeCode, 700);
     }
 }
-window.addEventListener('load', () => { setTimeout(typeTerminal, 1000); });
+window.addEventListener('load', () => { setTimeout(typeCode, 1000); });
 </script>
 
 </body>
