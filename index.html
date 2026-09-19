@@ -299,7 +299,57 @@
     </svg>
 </a>
 
+
+<!-- IMAGE LIGHTBOX -->
+<div class="image-lightbox" id="imageLightbox" aria-hidden="true">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close image">&times;</button>
+    <img class="lightbox-image" id="lightboxImage" src="" alt="">
+    <div class="lightbox-caption" id="lightboxCaption"></div>
+</div>
+
 <script>
+
+// 0. PORTFOLIO IMAGE LIGHTBOX
+const imageLightbox = document.getElementById('imageLightbox');
+const lightboxImage = document.getElementById('lightboxImage');
+const lightboxCaption = document.getElementById('lightboxCaption');
+const lightboxClose = document.getElementById('lightboxClose');
+const portfolioImages = document.querySelectorAll('.portfolio-card img');
+
+function openLightbox(image) {
+    lightboxImage.src = image.src;
+    lightboxImage.alt = image.alt || 'Portfolio image';
+    lightboxCaption.textContent = image.alt || 'Denplex Arts Portfolio';
+    imageLightbox.classList.add('active');
+    imageLightbox.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+    imageLightbox.classList.remove('active');
+    imageLightbox.setAttribute('aria-hidden', 'true');
+    lightboxImage.src = '';
+    document.body.style.overflow = '';
+}
+
+portfolioImages.forEach(image => {
+    image.addEventListener('click', () => openLightbox(image));
+});
+
+lightboxClose.addEventListener('click', closeLightbox);
+
+imageLightbox.addEventListener('click', (event) => {
+    if (event.target === imageLightbox) {
+        closeLightbox();
+    }
+});
+
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && imageLightbox.classList.contains('active')) {
+        closeLightbox();
+    }
+});
+
 // 1. MATRIX RAIN EFFECT
 const canvas = document.getElementById('matrix');
 const ctx = canvas.getContext('2d');
