@@ -1,406 +1,192 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Denplex Arts | David Muiruri - Web & Graphic Designer</title>
-    <meta name="description" content="David Muiruri - Web Developer & Brand Designer in Kiambu, Kenya. Modern websites, UI/UX, and Brand Identity.">
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Denplex Arts | David Muiruri</title>
+<meta name="description" content="David Muiruri - Web Developer & Brand Designer in Kiambu, Kenya">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{ --bg:#000; --text:#E5E5E5; --muted:#737373; --accent:#00FF88; --border:#1F1F1F; --whatsapp:#25D366; }
+*{margin:0;padding:0;box-sizing:border-box} html{scroll-behavior:smooth}
+body{font-family:'Manrope',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden}
+#matrix{position:fixed;top:0;left:0;width:100%;height:100%;z-index:-3;opacity:0.06;pointer-events:none}
+body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;background-image:linear-gradient(rgba(0,255,136,0.02) 1px, transparent 1px),linear-gradient(90deg, rgba(0,255,136,0.02) 1px, transparent 1px);background-size:50px 50px;z-index:-2}
 
-    <style>
-        :root{
-            --bg: #000; --card: #0A0A0A; --text: #E5E5E5;
-            --muted: #737373; --accent: #00FF88; --accent2: #3B82F6; --border: #1F1F1F;
-            --whatsapp: #25D366;
-        }
-        *{ margin: 0; padding: 0; box-sizing: border-box; }
-        html{ scroll-behavior: smooth; }
-        body{ font-family: 'Manrope', sans-serif; background: var(--bg); color: var(--text); overflow-x: hidden; }
+nav{position:fixed;top:0;width:100%;background:rgba(0,0,0,0.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);z-index:100;display:flex;justify-content:space-between;align-items:center;padding:14px 5%}
+.logo{font-weight:800;font-size:20px;letter-spacing:-1px}.logo span{color:var(--accent)}
+#nav-links{display:flex;list-style:none;gap:28px;align-items:center}
+#nav-links a{color:var(--muted);text-decoration:none;font-weight:600;font-size:14px}
+#nav-links a:hover{color:var(--accent)}
+.btn-nav{background:var(--accent);color:#000!important;padding:8px 16px;border-radius:6px;font-weight:700}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer}.hamburger span{width:22px;height:2px;background:var(--text);transition:0.3s}
+.hamburger.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}.hamburger.active span:nth-child(2){opacity:0}.hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
 
-        /* 1. MATRIX RAIN BACKGROUND */
-        #matrix{
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            z-index: -3; opacity: 0.08;
-        }
+.hero{min-height:100vh;display:flex;align-items:center;padding:110px 5% 60px;gap:50px;max-width:1300px;margin:0 auto}
+.hero-text{flex:1}.badge{display:inline-block;border:1px solid var(--accent);padding:6px 12px;border-radius:50px;font-size:12px;color:var(--accent);font-family:'JetBrains Mono';margin-bottom:18px;background:rgba(0,255,136,0.1)}
+.hero-text h1{font-size:clamp(34px,6vw,68px);line-height:1.05;font-weight:800;letter-spacing:-2px}.hero-text h1 span{color:var(--accent)}
+.hero-text p{color:var(--muted);max-width:480px;margin:18px 0 26px;font-size:17px}
+.btn{background:var(--whatsapp);color:#000;padding:13px 26px;border-radius:8px;text-decoration:none;font-weight:700;display:inline-block;border:1px solid var(--whatsapp)}.btn-outline{border:1px solid var(--border);color:var(--text);padding:13px 26px;border-radius:8px;text-decoration:none;font-weight:700;margin-left:10px}
+.hero-image{flex:1}.terminal{background:#0A0A0A;border:1px solid var(--accent);border-radius:12px;padding:18px;font-family:'JetBrains Mono';font-size:12px;height:300px;overflow-y:auto}
+.terminal-header{display:flex;gap:8px;margin-bottom:12px;padding-bottom:10px;border-bottom:1px solid var(--border)}.dot{width:10px;height:10px;border-radius:50%}.dot.red{background:#EF4444}.dot.yellow{background:#F59E0B}.dot.green{background:var(--accent)}
+.profile-wrap{position:relative;margin-top:24px}.profile-wrap img{width:100%;border-radius:16px;border:1px solid var(--accent);display:block}
+.name-badge{position:absolute;bottom:12px;left:12px;background:rgba(0,0,0,0.85);backdrop-filter:blur(10px);border:1px solid var(--accent);padding:10px 14px;border-radius:8px;font-weight:700;font-size:14px}.name-badge span{color:var(--accent);font-family:'JetBrains Mono';font-size:11px;display:block}
 
-        /* TECH GRID */
-        body::before{
-            content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background-image: linear-gradient(rgba(0,255,136,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0,255,136,0.03) 1px, transparent 1px);
-            background-size: 50px 50px; z-index: -2;
-        }
+section{padding:70px 5%;max-width:1300px;margin:0 auto;position:relative;z-index:1}
+.section-header{text-align:center;margin-bottom:35px}.section-header h2{font-size:38px;font-weight:800;letter-spacing:-1px}.section-header p{color:var(--muted);margin-top:6px}
 
-        /* NAV */
-        nav{ position: fixed; top: 0; width: 100%; background: rgba(0,0,0,0.8); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 16px 5%; }
-     .logo{ font-weight: 800; font-size: 20px; letter-spacing: -1px; }.logo span{ color: var(--accent); }
-        #nav-links{ display: flex; list-style: none; gap: 30px; }
-        #nav-links a{ color: var(--muted); text-decoration: none; font-weight: 600; font-size: 14px; transition: 0.2s; }
-        #nav-links a:hover{ color: var(--accent); }
-     .btn-nav{ background: var(--accent); color: #000!important; padding: 8px 16px; border-radius: 6px; font-weight: 700; }
-     .hamburger{ display: none; flex-direction: column; gap: 5px; cursor: pointer; z-index: 101; }
-     .hamburger span{ width: 22px; height: 2px; background: var(--text); transition: 0.3s; }
-     .hamburger.active span:nth-child(1){ transform: rotate(45deg) translate(5px, 5px); }
-     .hamburger.active span:nth-child(2){ opacity: 0; }
-     .hamburger.active span:nth-child(3){ transform: rotate(-45deg) translate(5px, -5px); }
+/* FREE FLOATING IMAGES - NO BOX */
+.portfolio-container{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
+.portfolio-item{position:relative;cursor:zoom-in;overflow:hidden;border-radius:14px}
+.portfolio-item img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;display:block;transition:transform 0.4s ease;border-radius:14px}
+.portfolio-item:hover img{transform:scale(1.05)}
+.portfolio-item.overlay{position:absolute;inset:0;background:linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 60%);opacity:0;transition:0.3s;display:flex;align-items:flex-end;padding:14px;border-radius:14px}
+.portfolio-item:hover.overlay{opacity:1}
+.overlay span{font-family:'JetBrains Mono';font-size:11px;color:var(--accent);background:rgba(0,0,0,0.6);padding:4px 8px;border-radius:4px;border:1px solid var(--border)}
 
-        /* HERO */
-     .hero{ min-height: 100vh; display: flex; align-items: center; padding: 120px 5% 80px; gap: 60px; max-width: 1300px; margin: 0 auto; position: relative; z-index: 1; }
-     .hero-text{ flex: 1; }
-     .badge{ display: inline-block; border: 1px solid var(--accent); padding: 6px 12px; border-radius: 50px; font-size: 12px; color: var(--accent); font-family: 'JetBrains Mono'; margin-bottom: 20px; background: rgba(0,255,136,0.1); }
-     .hero-text h1{ font-size: clamp(45px, 7vw, 72px); line-height: 1.1; font-weight: 800; letter-spacing: -2px; }
-     .hero-text h1 span{ color: var(--accent); }
-     .hero-text p{ color: var(--muted); max-width: 500px; margin: 20px 0 30px; font-size: 18px; }
-     .btn{ background: var(--whatsapp); color: #000; padding: 14px 28px; border-radius: 8px; text-decoration: none; font-weight: 700; display: inline-block; transition: 0.2s; border: 1px solid var(--whatsapp); cursor: pointer; font-family: 'Manrope'; font-size: 16px; }
-     .btn:hover{ background: transparent; color: var(--whatsapp); }
-     .btn-outline{ border: 1px solid var(--border); color: var(--text); padding: 14px 28px; border-radius: 8px; text-decoration: none; font-weight: 700; margin-left: 12px; }
-     .btn-outline:hover{ border-color: var(--accent); }
+.service-container{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.service-box{background:#0A0A0A;padding:26px;border-radius:12px;border:1px solid var(--border)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;text-align:center}
+.stat-box{background:#0A0A0A;padding:24px;border-radius:12px;border:1px solid var(--border)}
+.stat-box h2{font-size:34px;color:var(--accent)}
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.contact-form input,.contact-form textarea{width:100%;padding:13px;margin-bottom:12px;background:#0A0A0A;border:1px solid var(--border);color:var(--text);border-radius:8px;font-family:'Manrope'}
+footer{text-align:center;padding:30px 5%;border-top:1px solid var(--border);color:var(--muted);font-size:13px}
 
-        /* TERMINAL */
-     .hero-image{ flex: 1; position: relative; }
-     .terminal{
-            background: #0A0A0A; border: 1px solid var(--accent); border-radius: 12px;
-            padding: 20px; font-family: 'JetBrains Mono'; font-size: 13px;
-            box-shadow: 0 0 40px rgba(0,255,136,0.15); height: 350px; overflow-y: auto;
-        }
-     .terminal-header{ display: flex; gap: 8px; margin-bottom: 15px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
-     .dot{ width: 12px; height: 12px; border-radius: 50%; }
-     .dot.red{ background: #EF4444; }.dot.yellow{ background: #F59E0B; }.dot.green{ background: var(--accent); }
-     .terminal-body{ color: var(--muted); }
-     .line{ margin-bottom: 6px; white-space: pre-wrap; }
-     .prompt{ color: var(--accent); }
-     .command{ color: var(--text); }
-     .keyword{ color: var(--accent2); }
-     .string{ color: #FBBF24; }
-     .cursor{ display: inline-block; width: 8px; height: 16px; background: var(--accent); animation: blink 1s infinite; }
-        @keyframes blink{ 50%{ opacity: 0; } }
+/* LIGHTBOX - FULL IMAGE */
+#lightbox{position:fixed;inset:0;background:rgba(0,0,0,0.92);backdrop-filter:blur(10px);z-index:9999;display:none;align-items:center;justify-content:center;padding:20px}
+#lightbox.active{display:flex}
+#lightbox img{max-width:95vw;max-height:90vh;border-radius:10px;box-shadow:0 0 40px rgba(0,255,136,0.2)}
+#lightbox-close{position:absolute;top:18px;right:24px;font-size:36px;color:#fff;background:none;border:none;cursor:pointer}
 
-        /* PROFILE WITH NAME BADGE */
-     .profile-wrap{ position: relative; margin-top: 30px; }
-     .profile-wrap img{ width: 100%; border-radius: 16px; border: 1px solid var(--accent); }
-     .name-badge{
-            position: absolute; bottom: 15px; left: 15px;
-            background: rgba(0,0,0,0.85); backdrop-filter: blur(10px);
-            border: 1px solid var(--accent); padding: 12px 18px; border-radius: 8px;
-            font-weight: 700; font-size: 16px;
-        }
-     .name-badge span{ color: var(--accent); font-family: 'JetBrains Mono'; font-size: 12px; display: block; }
+.fade{opacity:0;transform:translateY(16px);transition:0.5s}.fade.visible{opacity:1;transform:translateY(0)}
+.whatsapp-float{position:fixed;bottom:20px;right:20px;z-index:99;width:56px;height:56px;background:var(--whatsapp);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 18px rgba(37,211,102,0.4)}.whatsapp-float svg{width:30px;height:30px;fill:#000}
 
-        /* SECTIONS */
-        section{ padding: 100px 5%; max-width: 1300px; margin: 0 auto; position: relative; z-index: 1; }
-     .section-header{ text-align: center; margin-bottom: 60px; }
-     .section-header h2{ font-size: 42px; font-weight: 800; letter-spacing: -1.5px; }
-     .section-header p{ color: var(--muted); }
-     .service-container{ display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; }
-     .service-box{ background: var(--card); padding: 30px; border-radius: 12px; border: 1px solid var(--border); transition: 0.3s; position: relative; overflow: hidden; }
-     .service-box:hover{ border-color: var(--accent); transform: translateY(-4px); box-shadow: 0 0 20px rgba(0,255,136,0.1); }
-     .service-box::before{ content: ''; position: absolute; top: 0; left: 0; width: 0; height: 2px; background: var(--accent); transition: 0.4s; }
-     .service-box:hover::before{ width: 100%; }
-     .service-icon{ font-size: 32px; margin-bottom: 16px; }
-     .portfolio-container{ display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 20px; }
-     .portfolio-card{ background: var(--card); border-radius: 12px; overflow: hidden; border: 1px solid var(--border); transition: 0.3s; }
-     .portfolio-card:hover{ border-color: var(--accent); }
-     .portfolio-card img{ width: 100%; height: 250px; object-fit: cover; }
-     .portfolio-content{ padding: 20px; }
-     .tag{ font-size: 11px; color: var(--accent); border: 1px solid var(--accent); padding: 4px 10px; border-radius: 4px; font-family: 'JetBrains Mono'; background: rgba(0,255,136,0.1); }
-     .skill{ margin-bottom: 20px; }
-     .skill-title{ display: flex; justify-content: space-between; font-size: 14px; margin-bottom: 8px; font-family: 'JetBrains Mono'; }
-     .skill-bar{ height: 4px; background: var(--border); border-radius: 2px; overflow: hidden; }
-     .skill-fill{ height: 100%; background: var(--accent); border-radius: 2px; transition: width 1s ease; }
-     .stats{ display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; text-align: center; }
-     .stat-box{ background: var(--card); padding: 30px; border-radius: 12px; border: 1px solid var(--border); }
-     .stat-box h2{ font-size: 40px; color: var(--accent); }
-     .contact{ display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
-     .contact-form input,.contact-form textarea{ width: 100%; padding: 14px; margin-bottom: 15px; background: var(--card); border: 1px solid var(--border); color: var(--text); border-radius: 8px; font-family: 'Manrope'; }
-     .contact-form input:focus,.contact-form textarea:focus{ outline: none; border-color: var(--accent); }
-        footer{ text-align: center; padding: 40px 5%; border-top: 1px solid var(--border); color: var(--muted); }
-     .fade{ opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
-     .fade.visible{ opacity: 1; transform: translateY(0); }
-
-        /* FLOATING WHATSAPP BUTTON */
-       .whatsapp-float{
-            position: fixed; bottom: 25px; right: 25px; z-index: 99;
-            width: 60px; height: 60px; background: var(--whatsapp);
-            border-radius: 50%; display: flex; align-items: center; justify-content: center;
-            box-shadow: 0 4px 20px rgba(37,211,102,0.4); transition: 0.3s;
-            text-decoration: none;
-        }
-       .whatsapp-float:hover{ transform: scale(1.1); }
-       .whatsapp-float svg{ width: 32px; height: 32px; fill: #000; }
-
-        @media(max-width: 900px){
-            #nav-links{ display: none; position: fixed; top: 0; right: 0; width: 70%; height: 100vh; background: var(--card); flex-direction: column; padding-top: 80px; border-left: 1px solid var(--border); }
-            #nav-links.active{ display: flex; }
-            #nav-links a{ padding: 15px 30px; border-bottom: 1px solid var(--border); }
-         .hamburger{ display: flex; }
-         .hero{ flex-direction: column; }
-         .contact,.stats{ grid-template-columns: 1fr; }
-         .btn-outline{ margin-left: 0; margin-top: 12px; display: inline-block; }
-        }
-    </style>
+@media(max-width:900px){
+  #nav-links{display:none;position:fixed;top:0;right:0;width:75%;height:100vh;background:#0A0A0A;flex-direction:column;padding-top:80px;border-left:1px solid var(--border)}#nav-links.active{display:flex}#nav-links a{padding:14px 24px;border-bottom:1px solid var(--border);width:100%}
+ .hamburger{display:flex}.hero{flex-direction:column;padding-top:90px;gap:30px}
+ .portfolio-container{grid-template-columns:repeat(2,1fr);gap:10px} /* 2 columns on phone = fast */
+ .portfolio-item img{aspect-ratio:1/1}
+ .contact,.stats{grid-template-columns:1fr}
+  section{padding:50px 4%}
+ .btn-outline{margin-left:0;margin-top:10px;display:block;text-align:center}
+}
+@media(max-width:480px){.portfolio-container{grid-template-columns:1fr 1fr;gap:8px}}
+</style>
 </head>
-
 <body>
-
-<!-- MATRIX CANVAS -->
 <canvas id="matrix"></canvas>
-
 <nav>
-    <div class="logo">DENPLEX<span>.ARTS</span></div>
-    <ul id="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="portfolio.html">Portfolio</a></li>
-      <li><a href="#contact">Contact</a></li>
-      <li><a href="#contact" class="btn-nav">Hire Me</a></li>
-    </ul>
-    <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+<div class="logo">DENPLEX<span>.ARTS</span></div>
+<ul id="nav-links"><li><a href="#home">Home</a></li><li><a href="#about">About</a></li><li><a href="#services">Services</a></li><li><a href="#portfolio">Portfolio</a></li><li><a href="#webdesign">Web Design</a></li><li><a href="#contact" class="btn-nav">Hire Me</a></li></ul>
+<div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
 </nav>
 
 <section class="hero" id="home">
-<div class="hero-text fade">
-    <div class="badge">// Available for freelance</div>
-    <h1>Building <span>Modern Websites</span> & Brand Systems</h1>
-    <p>I design and develop fast, responsive websites and visual identities for startups and businesses in Kenya.</p>
-    <div class="buttons">
-        <a href="#contact" class="btn">Start a Project</a>
-        <a href="#portfolio" class="btn-outline">View Work</a>
-    </div>
-</div>
-
-<div class="hero-image fade">
-    <!-- TERMINAL -->
-    <div class="terminal">
-        <div class="terminal-header">
-            <div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div>
-        </div>
-        <div class="terminal-body" id="terminal-body"></div>
-    </div>
-
-    <!-- PROFILE -->
-    <div class="profile-wrap">
-        <img src="images/profile.png" alt="David Muiruri">
-        <div class="name-badge">
-            DAVID MUIRURI
-            <span>// Web Designer & Developer</span>
-        </div>
-    </div>
-</div>
+<div class="hero-text fade"><div class="badge">// Available for freelance</div><h1>Building <span>Modern Websites</span> & Brand Systems</h1><p>I design and develop fast, responsive websites and visual identities for startups and businesses in Kenya.</p><div><a href="#contact" class="btn">Start a Project</a><a href="#portfolio" class="btn-outline">View Work</a></div></div>
+<div class="hero-image fade"><div class="terminal"><div class="terminal-header"><div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div></div><div class="terminal-body" id="terminal-body"></div></div><div class="profile-wrap"><img src="images/profile.png" alt="David Muiruri" loading="lazy" decoding="async"><div class="name-badge">DAVID MUIRURI<span>// Web Designer</span></div></div></div>
 </section>
 
 <section class="about fade" id="about">
-    <div class="section-header"><h2>About Me</h2><p>Web Developer & Brand Designer based in Kiambu, Kenya</p></div>
-    <div style="display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:center;">
-        <div><p>I'm <strong>David Muiruri</strong>, founder of Denplex Arts. I build digital products that are fast, accessible, and designed to convert.</p><p style="margin-top:15px; color:var(--muted);">5+ years experience in Web Development, UI/UX, and Brand Identity.</p></div>
-        <div>
-            <div class="skill"><div class="skill-title"><span>HTML/CSS</span><span>95%</span></div><div class="skill-bar"><div class="skill-fill" style="width:0%"></div></div></div>
-            <div class="skill"><div class="skill-title"><span>JavaScript</span><span>85%</span></div><div class="skill-bar"><div class="skill-fill" style="width:0%"></div></div></div>
-            <div class="skill"><div class="skill-title"><span>UI/UX Design</span><span>90%</span></div><div class="skill-bar"><div class="skill-fill" style="width:0%"></div></div></div>
-        </div>
-    </div>
+<div class="section-header"><h2>About Me</h2><p>Web Developer & Brand Designer - Kiambu, Kenya</p></div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center" class="about-grid">
+<div><p>I'm <strong>David Muiruri</strong>, founder of Denplex Arts. I build digital products that are fast, accessible, and designed to convert.</p></div>
+<div><p style="color:var(--muted)">5+ years in Web Development, UI/UX, and Brand Identity.</p></div>
+</div>
 </section>
 
-<section class="services fade" id="services">
-    <div class="section-header"><h2>Services</h2><p>What I can do for you</p></div>
-    <div class="service-container">
-        <div class="service-box"><div class="service-icon">💻</div><h3>Web Development</h3><p>Custom, responsive, and fast websites. Built with clean code and SEO in mind.</p></div>
-        <div class="service-box"><div class="service-icon">🎨</div><h3>Brand Identity</h3><p>Logos, style guides, and complete brand systems that look premium.</p></div>
-        <div class="service-box"><div class="service-icon">⚡</div><h3>UI/UX Design</h3><p>User interfaces for web apps and landing pages. Designed in Figma first.</p></div>
-    </div>
-</section>
-
+<!-- SELECTED WORK - FREE IMAGES -->
 <section class="portfolio fade" id="portfolio">
-    <div class="section-header"><h2>Selected Work</h2><p>Recent projects</p></div>
-    <div class="portfolio-container">
-       <div class="portfolio-card"><img src="images/project1.jpg" alt="Website Design"><div class="portfolio-content"><span class="tag">WEB DEV</span><h3 style="margin-top:10px;">Business Website</h3></div></div>
-       
-        <div class="portfolio-card"><img src="images/project2.jpg" alt="Logo Design"><div class="portfolio-content"><span class="tag">BRANDING</span><h3 style="margin-top:10px;">Logo System</h3></div></div>
-      
-        <div class="portfolio-card"><img src="images/project3.jpg" alt="Poster Design"><div class="portfolio-content"><span class="tag">GRAPHICS</span><h3 style="margin-top:10px;">Campaign Design</h3></div></div>
-       
-        <div class="portfolio-card"><img src="images/rift-tech-flat.jpg" alt="Rift Tech"><div class="portfolio-content"><span class="tag">BRANDING</span><h3 style="margin-top:10px;">Rift Tech Brand</h3></div></div>
-       
-        <div class="portfolio-card"><img src="images/denplex arts (2).png" alt="Denplex Arts"><div class="portfolio-content"><span class="tag">BRANDING</span><h3 style="margin-top:10px;">Denplex Arts Logo</h3></div></div>
-       
-        <div class="portfolio-card"><img src="images/nailuxe-storefront-mockup.jpg" alt="Nailuxe"><div class="portfolio-content"><span class="tag">BRANDING</span><h3 style="margin-top:10px;">Nailuxe Storefront</h3></div></div>
-       
-        <div class="portfolio-card"><img src="images/denplexarts.png" alt="Logo"><div class="portfolio-content"><span class="tag">BRANDING</span><h3 style="margin-top:10px;">Logo Design</h3></div>></div>
-       
-         <div class="portfolio-card"><img src="images/Distinct Logo.png" alt="Logo"><div class="portfolio-content"><span class="tag">BRANDING</span><h3 style="margin-top:10px;">Distinct Logo</h3></div></div>
-
-        <div class="portfolio-card"><img src="images/BAKERY POSTER DESIGN.png" alt="Poster"><div class="portfolio-content"><span class="tag">BRANDING</span><h3 style="margin-top:10px;">Poster Design</h3></div></div>
-        
-        <div class="portfolio-card"><img src="images/beauty shop flyer.png" alt="Poster"><div class="portfolio-content"><span class="tag">BRANDING</span><h3 style="margin-top:10px;">Poster Design</h3></div></div>
-         
-        <div class="portfolio-card"><img src="images/black and white masking design.png" alt="Poster"><div class="portfolio-content"><span class="tag">BRANDING</span><h3 style="margin-top:10px;">Poster Design</h3></div></div>
-         
-        <div class="portfolio-card"><img src="images/HOSPITAL POSTER DESIGN.png" alt="Poster"><div class="portfolio-content"><span class="tag">BRANDING</span><h3 style="margin-top:10px;">Poster Design</h3></div></div>
-          
-        <div class="portfolio-card"><img src="images/MASKING DESIGN.png" alt="Poster"><div class="portfolio-content"><span class="tag">BRANDING</span><h3 style="margin-top:10px;">Poster Design</h3></div></div>
-          
-        <div class="portfolio-card"><img src="images/INTAKE POSTER.png" alt="Poster"><div class="portfolio-content"><span class="tag">BRANDING</span><h3 style="margin-top:10px;">Poster Design</h3></div></div>
-          
-        <div class="portfolio-card"><img src="images/NIKE SHOE POSTER PROJECT.png" alt="Poster"><div class="portfolio-content"><span class="tag">BRANDING</span><h3 style="margin-top:10px;">Poster Design</h3></div></div>        
-    </div>
-</section>
-    <section class="portfolio fade" id="portfolio">
-    <div class="section-header"><h2>WEB DESIGN</h2><p>Recent projects</p></div>
-    <div class="portfolio-container">
-        <div class="portfolio-card"><img src="images/portfolio.jpg" alt="WEBSITE"><div class="portfolio-content"><span class="tag">WEBSITE</span><h3 style="margin-top:10px;">WEBSITE DESIGN</h3></div></div>
-      
-       <div class="portfolio-card"><img src="images/PORTFOLIO1.jpg" alt="WEBSITE"><div class="portfolio-content"><span class="tag">WEBSITE</span><h3 style="margin-top:10px;">WEBSITE DESIGN</h3></div></div>
-       
-       <div class="portfolio-card"><img src="images/portfolio2.jpg" alt="WEBSITE"><div class="portfolio-content"><span class="tag">WEBSITE</span><h3 style="margin-top:10px;">WEBSITE DESIGN</h3></div></div>
-    
-        <div class="portfolio-card"><img src="images/ecomerce.jpg" alt="WEBSITE"><div class="portfolio-content"><span class="tag">WEBSITE</span><h3 style="margin-top:10px;">WEBSITE DESIGN</h3></div></div>
-       
-        <div class="portfolio-card"><img src="images/ecomerce2.jpg" alt="WEBSITE"><div class="portfolio-content"><span class="tag">WEBSITE</span><h3 style="margin-top:10px;">WEBSITE DESIGN</h3></div></div>
-    
-        <div class="portfolio-card"><img src="images/ecomerce3.jpg" alt="WEBSITE"><div class="portfolio-content"><span class="tag">WEBSITE</span><h3 style="margin-top:10px;">WEBSITE DESIGN</h3></div></div>
-   
-        <div class="portfolio-card"><img src="images/business.jpg" alt="WEBSITE"><div class="portfolio-content"><span class="tag">WEBSITE</span><h3 style="margin-top:10px;">WEBSITE DESIGN</h3></div></div>
-  
-        <div class="portfolio-card"><img src="images/business4.jpg" alt="WEBSITE"><div class="portfolio-content"><span class="tag">WEBSITE</span><h3 style="margin-top:10px;">WEBSITE DESIGN</h3></div></div> 
-     </div>
-</section>
-        
-
-<section class="stats fade">
-    <div class="stat-box"><h2>50+</h2><p>Projects</p></div>
-    <div class="stat-box"><h2>30+</h2><p>Clients</p></div>
-    <div class="stat-box"><h2>5+</h2><p>Years</p></div>
-    <div class="stat-box"><h2>100%</h2><p>Satisfaction</p></div>
+<div class="section-header"><h2>Selected Work</h2><p>Tap any image to view full</p></div>
+<div class="portfolio-container">
+<div class="portfolio-item"><img src="images/project1.jpg" alt="Business Website" loading="lazy" decoding="async"><div class="overlay"><span>WEB DEV</span></div></div>
+<div class="portfolio-item"><img src="images/project2.jpg" alt="Logo System" loading="lazy" decoding="async"><div class="overlay"><span>BRANDING</span></div></div>
+<div class="portfolio-item"><img src="images/project3.jpg" alt="Campaign Design" loading="lazy" decoding="async"><div class="overlay"><span>GRAPHICS</span></div></div>
+<div class="portfolio-item"><img src="images/rift-tech-flat.jpg" alt="Rift Tech Brand" loading="lazy" decoding="async"><div class="overlay"><span>BRANDING</span></div></div>
+<div class="portfolio-item"><img src="images/nailuxe-storefront-mockup.jpg" alt="Nailuxe Storefront" loading="lazy" decoding="async"><div class="overlay"><span>BRANDING</span></div></div>
+<div class="portfolio-item"><img src="images/denplexarts.png" alt="Denplex Logo" loading="lazy" decoding="async"><div class="overlay"><span>LOGO</span></div></div>
+<div class="portfolio-item"><img src="images/Distinct-Logo.png" alt="Distinct Logo" loading="lazy" decoding="async"><div class="overlay"><span>LOGO</span></div></div>
+<div class="portfolio-item"><img src="images/BAKERY-POSTER-DESIGN.png" alt="Bakery Poster" loading="lazy" decoding="async"><div class="overlay"><span>POSTER</span></div></div>
+<div class="portfolio-item"><img src="images/beauty-shop-flyer.png" alt="Beauty Flyer" loading="lazy" decoding="async"><div class="overlay"><span>POSTER</span></div></div>
+<div class="portfolio-item"><img src="images/HOSPITAL-POSTER-DESIGN.png" alt="Hospital Poster" loading="lazy" decoding="async"><div class="overlay"><span>POSTER</span></div></div>
+<div class="portfolio-item"><img src="images/NIKE-SHOE-POSTER-PROJECT.png" alt="Nike Poster" loading="lazy" decoding="async"><div class="overlay"><span>POSTER</span></div></div>
+</div>
 </section>
 
-<section class="contact fade" id="contact">
-    <div>
-      <h2 style="font-size:36px; margin-bottom:15px;">Let's build something.</h2>
-      <p style="color:var(--muted);">Have a project? Send me a WhatsApp and let's talk.</p>
-      <p style="margin-top:20px;"><strong>Email:</strong> empiredenplex979@gmail.com</p>
-      <p><strong>Phone:</strong> +254 712 020 337</p>
-    </div>
-
-    <div class="contact-form">
-        <form id="whatsappForm">
-            <input type="text" id="name" placeholder="Your Name" required>
-            <input type="email" id="email" placeholder="Your Email" required>
-            <textarea id="message" placeholder="Tell me about your project..." rows="5" required></textarea>
-            <button type="submit" class="btn">Send to WhatsApp</button>
-        </form>
-    </div>
+<!-- WEB DESIGN - FREE IMAGES -->
+<section class="portfolio fade" id="webdesign">
+<div class="section-header"><h2>WEB DESIGN</h2><p>Tap any image to view full</p></div>
+<div class="portfolio-container">
+<div class="portfolio-item"><img src="images/portfolio.jpg" alt="Website Design" loading="lazy" decoding="async"><div class="overlay"><span>WEBSITE</span></div></div>
+<div class="portfolio-item"><img src="images/PORTFOLIO1.jpg" alt="Website Design" loading="lazy" decoding="async"><div class="overlay"><span>WEBSITE</span></div></div>
+<div class="portfolio-item"><img src="images/ecomerce.jpg" alt="Ecommerce" loading="lazy" decoding="async"><div class="overlay"><span>ECOMMERCE</span></div></div>
+<div class="portfolio-item"><img src="images/business.jpg" alt="Business Website" loading="lazy" decoding="async"><div class="overlay"><span>BUSINESS</span></div></div>
+<div class="portfolio-item"><img src="images/ecomerce2.jpg" alt="Ecommerce 2" loading="lazy" decoding="async"><div class="overlay"><span>ECOMMERCE</span></div></div>
+<div class="portfolio-item"><img src="images/business4.jpg" alt="Business Website" loading="lazy" decoding="async"><div class="overlay"><span>BUSINESS</span></div></div>
+</div>
 </section>
+
+<section class="stats fade"><div class="stat-box"><h2>50+</h2><p>Projects</p></div><div class="stat-box"><h2>30+</h2><p>Clients</p></div><div class="stat-box"><h2>5+</h2><p>Years</p></div><div class="stat-box"><h2>100%</h2><p>Satisfaction</p></div></section>
+
+<section class="contact fade" id="contact"><div><h2 style="font-size:34px;margin-bottom:12px">Let's build something.</h2><p style="color:var(--muted)">Have a project? Send me a WhatsApp</p><p style="margin-top:16px"><strong>Email:</strong> empiredenplex979@gmail.com</p><p><strong>Phone:</strong> +254 712 020 337</p></div><div class="contact-form"><form id="whatsappForm"><input type="text" id="name" placeholder="Your Name" required><input type="email" id="email" placeholder="Your Email" required><textarea id="message" placeholder="Tell me about your project..." rows="5" required></textarea><button type="submit" class="btn">Send to WhatsApp</button></form></div></section>
 
 <footer>© 2026 Denplex Arts. Built with clean code.</footer>
 
-<!-- FLOATING WHATSAPP BUTTON -->
-<a href="https://wa.me/254712020337" target="_blank" class="whatsapp-float">
-    <svg viewBox="0 0 32 32">
-        <path d="M16.024 5.455c-5.812 0-10.545 4.733-10.545 10.545 0 1.855.486 3.67 1.41 5.268L5.455 26.545l5.972-1.568c1.516.826 3.225 1.256 4.997 1.256 5.812 0 10.545-4.733 10.545-10.545S21.836 5.455 16.024 5.455zm0 19.388c-1.56 0-3.086-.419-4.417-1.212l-.317-.189-3.544.93.946-3.454-.207-.329c-.866-1.374-1.322-2.964-1.322-4.614 0-4.786 3.894-8.68 8.68-8.68s8.68 3.894 8.68 8.68-3.894 8.68-8.68 8.68zm4.754-6.496c-.261-.131-1.545-.762-1.784-.848-.239-.086-.413-.131-.587.131-.174.261-.674.848-.826 1.022-.152.174-.304.196-.565.065-.261-.131-1.102-.406-2.1-1.295-.777-.693-1.302-1.549-1.454-1.81-.152-.261-.016-.402.115-.532.117-.117.261-.304.391-.456.131-.152.174-.261.261-.435.086-.174.043-.326-.022-.456-.065-.131-.587-1.414-.803-1.936-.211-.508-.426-.437-.587-.445-.152-.008-.326-.01-.5-.01-.174 0-.456.065-.696.326-.239.261-.913.895-.913 2.182s.936 2.532 1.066 2.706c.131.174 1.841 2.812 4.462 3.944.623.27 1.11.431 1.49.552.626.199 1.195.171 1.645.104.502-.075 1.545-.631 1.763-1.241.218-.61.218-1.133.152-1.241-.065-.108-.239-.174-.5-.305z"/>
-    </svg>
-</a>
+<a href="https://wa.me/254712020337" target="_blank" class="whatsapp-float"><svg viewBox="0 0 32 32"><path d="M16.024 5.455c-5.812 0-10.545 4.733-10.545 10.545 0 1.855.486 3.67 1.41 5.268L5.455 26.545l5.972-1.568c1.516.826 3.225 1.256 4.997 1.256 5.812 0 10.545-4.733 10.545-10.545S21.836 5.455 16.024 5.455zm0 19.388c-1.56 0-3.086-.419-4.417-1.212l-.317-.189-3.544.93.946-3.454-.207-.329c-.866-1.374-1.322-2.964-1.322-4.614 0-4.786 3.894-8.68 8.68-8.68s8.68 3.894 8.68 8.68-3.894 8.68-8.68 8.68zm4.754-6.496c-.261-.131-1.545-.762-1.784-.848-.239-.086-.413-.131-.587.131-.174.261-.674.848-.826 1.022-.152.174-.304.196-.565.065-.261-.131-1.102-.406-2.1-1.295-.777-.693-1.302-1.549-1.454-1.81-.152-.261-.016-.402.115-.532.117-.117.261-.304.391-.456.131-.152.174-.261.261-.435.086-.174.043-.326-.022-.456-.065-.131-.587-1.414-.803-1.936-.211-.508-.426-.437-.587-.445-.152-.008-.326-.01-.5-.01-.174 0-.456.065-.696.326-.239.261-.913.895-.913 2.182s.936 2.532 1.066 2.706c.131.174 1.841 2.812 4.462 3.944.623.27 1.11.431 1.49.552.626.199 1.195.171 1.645.104.502-.075 1.545-.631 1.763-1.241.218-.61.218-1.133.152-1.241-.065-.108-.239-.174-.5-.305z"/></svg></a>
+
+<!-- LIGHTBOX -->
+<div id="lightbox"><button id="lightbox-close">×</button><img id="lightbox-img" src="" alt=""></div>
 
 <script>
-// 1. MATRIX RAIN EFFECT
+// LIGHTBOX THAT WORKS
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+document.querySelectorAll('.portfolio-item img').forEach(img=>{
+  img.addEventListener('click',()=>{
+    lightboxImg.src = img.src;
+    lightbox.classList.add('active');
+    document.body.style.overflow='hidden';
+  });
+});
+document.getElementById('lightbox-close').addEventListener('click',()=>{
+  lightbox.classList.remove('active');
+  document.body.style.overflow='';
+});
+lightbox.addEventListener('click',(e)=>{
+  if(e.target===lightbox) { lightbox.classList.remove('active'); document.body.style.overflow=''; }
+});
+
+// MATRIX - DISABLED ON PHONE FOR SPEED
 const canvas = document.getElementById('matrix');
 const ctx = canvas.getContext('2d');
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-const chars = "01DENPLEXARTS{}[]<>/\\|";
-const fontSize = 14;
-let columns = canvas.width / fontSize;
-let drops = [];
-for(let i = 0; i < columns; i++) drops[i] = 1;
-function drawMatrix(){
-    ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-    ctx.fillStyle = '#00FF88';
-    ctx.font = fontSize + 'px JetBrains Mono';
-    for(let i = 0; i < drops.length; i++){
-        const text = chars[Math.floor(Math.random() * chars.length)];
-        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-        if(drops[i] * fontSize > canvas.height && Math.random() > 0.975) drops[i] = 0;
-        drops[i]++;
-    }
-}
-setInterval(drawMatrix, 35);
-window.addEventListener('resize', () => {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-    columns = canvas.width / fontSize;
-    drops = [];
-    for(let i = 0; i < columns; i++) drops[i] = 1;
-});
+if(window.innerWidth > 900){
+  canvas.width=innerWidth; canvas.height=innerHeight;
+  let cols=Math.floor(canvas.width/14);
+  let drops=Array(cols).fill(0).map(()=>Math.random()*-20);
+  function draw(){
+    ctx.fillStyle='rgba(0,0,0,0.07)'; ctx.fillRect(0,0,canvas.width,canvas.height);
+    ctx.fillStyle='#00FF88'; ctx.font='14px JetBrains Mono';
+    drops.forEach((y,i)=>{
+      ctx.fillText("01"[Math.floor(Math.random()*2)], i*14, y*14);
+      if(y*14>canvas.height && Math.random()>0.975) drops[i]=0;
+      drops[i]++;
+    });
+    requestAnimationFrame(draw);
+  }
+  draw();
+} else { canvas.style.display='none'; }
 
-// 2. MOBILE MENU
-const hamburger = document.getElementById('hamburger');
-const navLinks = document.getElementById('nav-links');
-hamburger.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-    hamburger.classList.toggle('active');
-});
+// MENU + FADE + TERMINAL
+const hamburger=document.getElementById('hamburger'), navLinks=document.getElementById('nav-links');
+hamburger.addEventListener('click',()=>{navLinks.classList.toggle('active');hamburger.classList.toggle('active')});
+const faders=document.querySelectorAll('.fade');
+new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:0.1}).observe;
+faders.forEach(f=>{new IntersectionObserver(entries=>{entries.forEach(en=>{if(en.isIntersecting)en.target.classList.add('visible')})},{threshold:0.1}).observe(f)});
 
-// 3. SCROLL ANIMATION + SKILL BAR ANIMATION
-const faders = document.querySelectorAll('.fade');
-const appearOnScroll = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if(entry.isIntersecting){
-      entry.target.classList.add('visible');
-      // Animate skill bars
-      entry.target.querySelectorAll('.skill-fill').forEach(bar => {
-        const width = bar.parentElement.previousElementSibling.querySelector('span:last-child').innerText;
-        bar.style.width = width;
-      });
-    }
-  });
-}, { threshold: 0.15 });
-faders.forEach(fader => appearOnScroll.observe(fader));
-
-// 4. TERMINAL TYPES REAL CODE
-const codeSnippets = [
-    '<span class="prompt">$</span> <span class="command">git clone denplex-portfolio</span>',
-    '<span class="keyword">const</span> skills = [<span class="string">"HTML"</span>, <span class="string">"CSS"</span>, <span class="string">"JavaScript"</span>, <span class="string">"UI/UX"</span>];',
-    '<span class="keyword">function</span> buildWebsite(client) {',
-    ' <span class="keyword">return</span> <span class="string">`Responsive + Fast + SEO Ready`</span>;',
-    '}',
-    '<span class="prompt">$</span> <span class="command">npm run deploy --project="Business Website"</span>',
-    '<span class="keyword">export default</span> DenplexArts;',
-    '<span class="prompt">$</span> <span class="command">_</span><span class="cursor"></span>'
-];
-let line = 0;
-const terminalBody = document.getElementById('terminal-body');
-function typeCode(){
-    if(line < codeSnippets.length){
-        const div = document.createElement('div');
-        div.className = 'line';
-        div.innerHTML = codeSnippets[line];
-        terminalBody.appendChild(div);
-        terminalBody.scrollTop = terminalBody.scrollHeight;
-        line++;
-        setTimeout(typeCode, 700);
-    }
-}
-window.addEventListener('load', () => { setTimeout(typeCode, 1000); });
-
-// 5. WHATSAPP FORM SUBMIT
-const whatsappForm = document.getElementById('whatsappForm');
-const whatsappNumber = '254712020337'; // Your number without +
-
-whatsappForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const message = document.getElementById('message').value;
-
-    const text = `*New Project Inquiry - Denplex Arts*%0A%0A*Name:* ${name}%0A*Email:* ${email}%0A*Message:* ${message}`;
-
-    const whatsappURL = `https://wa.me/${whatsappNumber}?text=${text}`;
-
-    window.open(whatsappURL, '_blank');
-
-    whatsappForm.reset();
-});
+const snippets=['$ git clone denplex','const work = ["Web","Brand","UI"]','function build(){ return "Fast" }','$ npm run deploy'];
+let i=0; const term=document.getElementById('terminal-body');
+function type(){ if(i<snippets.length){let d=document.createElement('div');d.className='line';d.textContent=snippets[i];term.appendChild(d);i++;setTimeout(type,500)}} window.addEventListener('load',()=>setTimeout(type,600));
+document.getElementById('whatsappForm').addEventListener('submit',e=>{e.preventDefault();let n=document.getElementById('name').value, em=document.getElementById('email').value, m=document.getElementById('message').value;window.open(`https://wa.me/254712020337?text=*New Project*%0AName:${n}%0AEmail:${em}%0A${m}`,'_blank');e.target.reset()});
 </script>
-
 </body>
 </html>
