@@ -1,143 +1,86 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Denplex Arts | David Muiruri</title>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#171717">
+<meta name="description" content="David Muiruri — Graphic Designer at Denplex Arts. Branding, advertising, print and digital design.">
+<title>David Muiruri | Denplex Arts</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{ --bg:#000; --text:#E5E5E5; --muted:#8a8a8a; --accent:#00FF88; --border:#1A1A1A; --whatsapp:#25D366; }
-*{margin:0;padding:0;box-sizing:border-box} body{font-family:'Manrope',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden}
-#matrix{position:fixed;inset:0;z-index:-3;opacity:0.05;pointer-events:none}
-nav{position:fixed;top:0;width:100%;background:rgba(0,0,0,0.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);z-index:100;display:flex;justify-content:space-between;align-items:center;padding:14px 5%}
-.logo{font-weight:800;font-size:20px}.logo span{color:var(--accent)}
-#nav-links{display:flex;list-style:none;gap:26px;align-items:center}
-#nav-links a{color:var(--muted);text-decoration:none;font-weight:600;font-size:14px}
-.btn-nav{background:var(--accent);color:#000!important;padding:8px 16px;border-radius:6px;font-weight:700}
-.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer}.hamburger span{width:22px;height:2px;background:var(--text)}
-.hamburger.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}.hamburger.active span:nth-child(2){opacity:0}.hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
-.hero{min-height:90vh;display:flex;align-items:center;padding:110px 5% 50px;gap:40px;max-width:1300px;margin:0 auto}
-.hero-text{flex:1}.badge{border:1px solid var(--accent);padding:6px 12px;border-radius:50px;font-size:11px;color:var(--accent);font-family:'JetBrains Mono';background:rgba(0,255,136,0.1);display:inline-block;margin-bottom:16px}
-.hero-text h1{font-size:clamp(36px,6vw,66px);line-height:1;letter-spacing:-2px;font-weight:800}.hero-text h1 span{color:var(--accent)}
-.hero-text p{color:var(--muted);max-width:460px;margin:16px 0 24px;font-size:16px}
-.btn{background:var(--whatsapp);color:#000;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:700;display:inline-block}
-section{padding:60px 5%;max-width:1300px;margin:0 auto}
-.section-header{text-align:center;margin-bottom:30px}.section-header h2{font-size:36px;font-weight:800;letter-spacing:-1px}.section-header p{color:var(--muted);font-size:14px;margin-top:6px}
-
-/* PINTEREST MASONRY - LIKE YOUR PIN */
-.masonry{ column-count:3; column-gap:14px; }
-.masonry-item{ break-inside:avoid; margin-bottom:14px; position:relative; cursor:zoom-in; overflow:hidden; border-radius:16px; background:#0A0A0A; }
-.masonry-item img{ width:100%; height:auto; display:block; border-radius:16px; transition:transform 0.5s ease, filter 0.3s; }
-.masonry-item:hover img{ transform:scale(1.04); filter:brightness(1.1); }
-.masonry-item::after{ content:attr(data-tag); position:absolute; bottom:10px; left:10px; font-family:'JetBrains Mono'; font-size:10px; color:var(--accent); background:rgba(0,0,0,0.7); border:1px solid var(--border); padding:4px 8px; border-radius:20px; opacity:0; transition:0.3s; }
-.masonry-item:hover::after{ opacity:1; }
-
-/* LIGHTBOX */
-#lightbox{position:fixed;inset:0;background:rgba(0,0,0,0.92);backdrop-filter:blur(12px);z-index:9999;display:none;align-items:center;justify-content:center;padding:12px}
-#lightbox.active{display:flex}
-#lightbox img{max-width:96vw;max-height:92vh;border-radius:12px;animation:pop 0.3s ease}
-@keyframes pop{from{transform:scale(0.9);opacity:0}to{transform:scale(1);opacity:1}}
-#lightbox-close{position:absolute;top:16px;right:20px;font-size:32px;color:#fff;background:rgba(255,255,255,0.1);border:none;width:40px;height:40px;border-radius:50%;cursor:pointer}
-
-.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;text-align:center;margin-top:20px}
-.stat-box{background:#0A0A0A;padding:22px;border-radius:12px;border:1px solid var(--border)}.stat-box h2{color:var(--accent);font-size:32px}
-.contact{display:grid;grid-template-columns:1fr 1fr;gap:30px}
-.contact-form input,.contact-form textarea{width:100%;padding:12px;margin-bottom:10px;background:#0A0A0A;border:1px solid var(--border);color:var(--text);border-radius:8px}
-footer{text-align:center;padding:30px 5%;border-top:1px solid var(--border);color:var(--muted);font-size:12px}
-.fade{opacity:0;transform:translateY(12px);transition:0.5s}.fade.visible{opacity:1;transform:translateY(0)}
-.whatsapp-float{position:fixed;bottom:18px;right:18px;width:54px;height:54px;background:var(--whatsapp);border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:99}
-
-/* PHONE FAST */
-@media(max-width:900px){
-#nav-links{display:none;position:fixed;top:0;right:0;width:78%;height:100vh;background:#0A0A0A;flex-direction:column;padding-top:80px;border-left:1px solid var(--border)}#nav-links.active{display:flex}#nav-links a{padding:14px 24px;border-bottom:1px solid var(--border);width:100%}
-.hamburger{display:flex}.hero{flex-direction:column;padding-top:88px}
-.masonry{column-count:2;column-gap:8px}.masonry-item{margin-bottom:8px;border-radius:12px}.masonry-item img{border-radius:12px}
-.stats,.contact{grid-template-columns:1fr}
-}
-@media(max-width:480px){.masonry{column-count:2;column-gap:8px}}
+:root{--ink:#171717;--paper:#f4efe5;--white:#fffdf8;--gold:#c9ad7a;--muted:#77736d;--line:rgba(23,23,23,.15);--serif:"Playfair Display",Georgia,serif;--sans:"DM Sans",Arial,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth;scroll-padding-top:85px}body{font-family:var(--sans);background:var(--paper);color:var(--ink);line-height:1.65}a{color:inherit;text-decoration:none}img{display:block;max-width:100%}.wrap{width:min(1160px,90%);margin:auto}
+.topline{height:5px;background:var(--gold)}header{position:sticky;top:0;z-index:20;background:#f4efe5ed;backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+nav{height:72px;display:flex;align-items:center;justify-content:space-between}.brand{font-weight:700;letter-spacing:.14em}.brand span{color:#9b7d4d}.links{display:flex;gap:28px;align-items:center;list-style:none}.links a{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#5c574f}.links a:hover{color:#9b7d4d}.nav-cta,.btn{display:inline-block;padding:12px 19px;background:var(--ink);color:var(--paper);border:1px solid var(--ink);font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;transition:.2s}.nav-cta:hover,.btn:hover{background:var(--gold);border-color:var(--gold);color:var(--ink)}.menu{display:none;background:none;border:0;font-size:25px}
+.hero{background:var(--ink);color:var(--paper);padding:95px 0;overflow:hidden}.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;align-items:center;gap:8%}.eyebrow,.kicker{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#a88c5e;font-weight:700}.hero h1{font:600 clamp(48px,7vw,86px)/1.06 var(--serif);letter-spacing:-.04em;margin:22px 0}.hero h1 em{font-style:normal;color:var(--gold)}.hero p{max-width:550px;color:#c6c0b5;font-size:15px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}.btn.gold{background:var(--gold);border-color:var(--gold);color:var(--ink)}.btn.ghost{background:transparent;border-color:#77736d;color:var(--paper)}.portrait{position:relative;width:100%;max-width:420px;justify-self:end}.portrait:after{content:"";position:absolute;inset:17px -17px -17px 17px;border:1px solid var(--gold);z-index:0}.portrait img{position:relative;z-index:1;width:100%;aspect-ratio:4/5;object-fit:cover;background:#292723}.portrait img:not([src]),.portrait img[src=""]{display:none}
+section{padding:82px 0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:25px;margin-bottom:32px}.kicker{margin-bottom:9px}h2{font:600 clamp(34px,5vw,52px)/1.12 var(--serif);letter-spacing:-.025em}.intro{max-width:420px;color:var(--muted);font-size:13px}
+.portfolio{background:var(--white)}.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:25px}.filter{padding:9px 13px;border:1px solid var(--line);background:transparent;font-size:10px;text-transform:uppercase;letter-spacing:.1em;cursor:pointer}.filter.active,.filter:hover{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.gallery{columns:3;column-gap:15px}.item{break-inside:avoid;margin-bottom:15px;position:relative;overflow:hidden;background:#e7e0d4;cursor:zoom-in}.item img{width:100%;height:auto;transition:.45s}.item:hover img{transform:scale(1.035);filter:brightness(.82)}.caption{position:absolute;bottom:0;left:0;right:0;padding:32px 13px 12px;background:linear-gradient(transparent,#000c);color:white;opacity:0;transition:.25s}.item:hover .caption{opacity:1}.caption b{display:block;font-size:11px}.caption small{font-size:9px;color:#e4d8c4;text-transform:uppercase;letter-spacing:.12em}.item[hidden]{display:none}
+.about-grid{display:grid;grid-template-columns:.75fr 1.25fr;gap:8%;align-items:start}.monogram{background:var(--ink);color:var(--paper);padding:30px;min-height:280px;display:flex;flex-direction:column;justify-content:space-between}.monogram strong{font:600 70px var(--serif);color:var(--gold)}.monogram small{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:#c6c0b5}.about-copy p{color:#625e57;margin:16px 0;font-size:14px}.skills{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:24px}.skill,.tool{padding:12px 14px;border:1px solid var(--line);font-size:11px;font-weight:600}.tools{background:#e9e2d7}.tool-list{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+.web{background:var(--ink);color:var(--paper)}.web .intro{color:#b7b0a4}.web-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-top:30px}.web-card{background:#242321;border:1px solid #ffffff20}.web-card img{width:100%;aspect-ratio:16/10;object-fit:cover;background:#333}.web-card p{padding:12px;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#d0c9bd}
+.contact{background:var(--gold)}.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:8%}.contact-copy{max-width:430px;margin-top:15px;color:#494239;font-size:13px}.details{margin-top:22px;font-size:12px;font-weight:700;display:grid;gap:7px}.form{display:grid;gap:11px}.form input,.form textarea{width:100%;padding:13px;background:#ffffff80;border:1px solid #17171744;color:var(--ink);font:inherit;outline:none}.form textarea{min-height:120px;resize:vertical}.form .btn{justify-self:start;cursor:pointer}
+footer{background:var(--ink);color:#bdb5a8;padding:22px 0;font-size:9px;letter-spacing:.1em;text-transform:uppercase}.foot{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+#lightbox{display:none;position:fixed;inset:0;z-index:100;background:#080808f5;align-items:center;justify-content:center;padding:50px 18px}#lightbox.open{display:flex}#lightbox img{max-width:100%;max-height:88vh;object-fit:contain}.close{position:absolute;top:12px;right:22px;border:0;background:none;color:white;font-size:36px;cursor:pointer}
+.whatsapp{position:fixed;right:20px;bottom:20px;z-index:30;width:50px;height:50px;border-radius:50%;display:grid;place-items:center;background:#25d366;color:#102516;box-shadow:0 5px 20px #0003;font-size:24px}
+.reveal{opacity:0;transform:translateY(15px);transition:.6s}.reveal.visible{opacity:1;transform:none}
+@media(max-width:800px){.hero-grid{grid-template-columns:1fr .8fr;gap:5%}.gallery{columns:2}.web-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:620px){nav{height:65px}.menu{display:block}.links{display:none;position:absolute;top:65px;left:0;right:0;background:var(--paper);padding:12px 5% 20px;flex-direction:column;align-items:stretch;gap:0}.links.open{display:flex}.links a{display:block;padding:12px 0;border-bottom:1px solid var(--line)}.nav-cta{margin-top:10px}.hero{padding:65px 0}.hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr}.portrait{width:78%;justify-self:start;margin:24px 0 0 10px}section{padding:65px 0}.section-head{display:block}.intro{margin-top:12px}.gallery{column-gap:8px}.item{margin-bottom:8px}.caption{opacity:1;padding:25px 8px 8px}.caption b{font-size:9px}.caption small{font-size:7px}.monogram{min-height:210px}.web-grid{gap:9px}.skills{gap:8px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important}.reveal{opacity:1;transform:none}}
 </style>
 </head>
 <body>
-<canvas id="matrix"></canvas>
-<nav><div class="logo">DENPLEX<span>.ARTS</span></div><ul id="nav-links"><li><a href="#home">Home</a></li><li><a href="#portfolio">Selected Work</a></li><li><a href="#webdesign">Web Design</a></li><li><a href="#contact" class="btn-nav">Hire Me</a></li></ul><div class="hamburger" id="hamburger"><span></span><span></span><span></span></div></nav>
-
-<section class="hero" id="home">
-<div class="hero-text fade"><div class="badge">// Available for freelance</div><h1>Building <span>Modern Websites</span> & Brand Systems</h1><p>Fast, responsive websites and visual identities for startups in Kenya.</p><a href="#portfolio" class="btn">View Work</a></div>
-<div class="fade" style="flex:1"><img src="images/profile.png" alt="David Muiruri" loading="lazy" style="width:100%;border-radius:16px;border:1px solid var(--accent)"></div>
-</section>
-
-<section id="portfolio" class="fade">
-<div class="section-header"><h2>Selected Work</h2><p>Pinterest style • Tap to open • No boxes</p></div>
-<div class="masonry">
-<div class="masonry-item" data-tag="BRANDING"><img src="images/project1.jpg" alt="Business Website" loading="lazy" decoding="async"></div>
-<div class="masonry-item" data-tag="LOGO"><img src="images/project2.jpg" alt="Logo System" loading="lazy"></div>
-<div class="masonry-item" data-tag="POSTER"><img src="images/project3.jpg" alt="Campaign" loading="lazy"></div>
-<div class="masonry-item" data-tag="BRANDING"><img src="images/rift-tech-flat.jpg" alt="Rift Tech" loading="lazy"></div>
-<div class="masonry-item" data-tag="BRANDING"><img src="images/nailuxe-storefront-mockup.jpg" alt="Nailuxe" loading="lazy"></div>
-<div class="masonry-item" data-tag="LOGO"><img src="images/denplexarts.png" alt="Denplex Logo" loading="lazy"></div>
-<div class="masonry-item" data-tag="LOGO"><img src="images/Distinct-Logo.png" alt="Distinct Logo" loading="lazy"></div>
-<div class="masonry-item" data-tag="POSTER"><img src="images/fashion poster design.jpg" alt="fashion design" loading="lazy"></div>
-<div class="masonry-item" data-tag="POSTER"><img src="images/fluxx beauty.jpg" alt="beauty poster" loading="lazy"></div>
-<div class="masonry-item" data-tag="POSTER"><img src="images/HOSPITAL-POSTER-DESIGN.png" alt="Hospital Poster" loading="lazy"></div>
-<div class="masonry-item" data-tag="POSTER"><img src="images/FASHION POSTER 12.jpg" alt="FASHION POSTER" loading="lazy"></div>
- <div class="masonry-item" data-tag="POSTER"><img src="images/MENU AFRICAS DELICACIES.jpg" alt="MENU POSTER" loading="lazy"></div>
- <div class="masonry-item" data-tag="POSTER"><img src="images/SHOOT POSTER.jpg" alt="SHOOT POSTER" loading="lazy"></div>
- <div class="masonry-item" data-tag="POSTER"><img src="images/STEPH CURRY POSTER.jpg" alt="STEPH CURRY" loading="lazy"></div>
- <div class="masonry-item" data-tag="POSTER"><img src="images/graduate 1.jpg" alt="graduate poster" loading="lazy"></div>
- <div class="masonry-item" data-tag="POSTER"><img src="images/HOODIE POSTER.jpg" alt="HOOD POSTER" loading="lazy"></div>
- <div class="masonry-item" data-tag="POSTER"><img src="images/Untitled-1.jpg" alt="poster 1" loading="lazy"></div>
- <div class="masonry-item" data-tag="POSTER"><img src="images/prada 1.jpg" alt="prada 1" loading="lazy"></div>
- <div class="masonry-item" data-tag="POSTER"><img src="images/prada 2.jpg" alt="prada 2" loading="lazy"></div>
- <div class="masonry-item" data-tag="POSTER"><img src="images/prada 3.jpg" alt="prada 3" loading="lazy"></div>
- <div class="masonry-item" data-tag="POSTER"><img src="images/prada 4.jpg" alt="prada 4" loading="lazy"></div>
- <div class="masonry-item" data-tag="POSTER"><img src="images/FASHION D2.jpg" alt="fashion" loading="lazy"></div>
- <div class="masonry-item" data-tag="POSTER"><img src="images/MODEL 1.png" alt="model" loading="lazy"></div>
- <div class="masonry-item" data-tag="POSTER"><img src="images/MODEL 2.png" alt="model" loading="lazy"></div>
- <div class="masonry-item" data-tag="POSTER"><img src="images/MODEL 3.png" alt="model" loading="lazy"></div>
- <div class="masonry-item" data-tag="POSTER"><img src="images/petanns.png" alt="petanns" loading="lazy"></div>
-</div>
-</section>
-
-<section id="webdesign" class="fade">
-<div class="section-header"><h2>WEB DESIGN</h2><p>Recent websites • Tap to open</p></div>
-<div class="masonry">
-<div class="masonry-item" data-tag="WEBSITE"><img src="images/portfolio.jpg" alt="Website" loading="lazy"></div>
-<div class="masonry-item" data-tag="WEBSITE"><img src="images/PORTFOLIO1.jpg" alt="Website" loading="lazy"></div>
-<div class="masonry-item" data-tag="ECOMMERCE"><img src="images/ecomerce.jpg" alt="Ecommerce" loading="lazy"></div>
-<div class="masonry-item" data-tag="BUSINESS"><img src="images/business.jpg" alt="Business" loading="lazy"></div>
-<div class="masonry-item" data-tag="ECOMMERCE"><img src="images/ecomerce2.jpg" alt="Ecommerce" loading="lazy"></div>
-<div class="masonry-item" data-tag="BUSINESS"><img src="images/business4.jpg" alt="Business" loading="lazy"></div>
-</div>
-</section>
-
-<section class="stats fade"><div class="stat-box"><h2>50+</h2><p>Projects</p></div><div class="stat-box"><h2>30+</h2><p>Clients</p></div><div class="stat-box"><h2>5+</h2><p>Years</p></div><div class="stat-box"><h2>100%</h2><p>Happy</p></div></section>
-
-<section id="contact" class="contact fade"><div><h2>Let's build something.</h2><p style="color:var(--muted);margin-top:8px">WhatsApp me: +254 712 020 337</p></div><div class="contact-form"><form id="waForm"><input id="name" placeholder="Your Name" required><input id="email" placeholder="Email" required><textarea id="msg" rows="4" placeholder="Project..." required></textarea><button class="btn" type="submit">Send to WhatsApp</button></form></div></section>
-
-<footer>© 2026 Denplex Arts</footer>
-
-<div id="lightbox"><button id="lightbox-close">×</button><img id="lightbox-img" src="" alt=""></div>
-<a href="https://wa.me/254712020337" class="whatsapp-float" target="_blank"><svg viewBox="0 0 32 32" width="28" height="28"><path fill="#000" d="M16 5.4c-5.8 0-10.5 4.7-10.5 10.5 0 1.9.5 3.7 1.4 5.3L5.4 26.5l6-1.6c1.5.8 3.2 1.3 5 1.3 5.8 0 10.5-4.7 10.5-10.5S21.8 5.4 16 5.4zm0 19.4c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3.5.9.9-3.5-.2-.3c-.9-1.4-1.3-3-1.3-4.6 0-4.8 3.9-8.7 8.7-8.7s8.7 3.9 8.7 8.7-3.9 8.7-8.7 8.7zm4.8-6.5c-.3-.1-1.5-.8-1.8-.8-.2-.1-.4-.1-.6.1-.2.3-.7.8-.8 1-.2.2-.3.2-.6.1-.3-.1-1.1-.4-2.1-1.3-.8-.7-1.3-1.5-1.5-1.8-.2-.3 0-.4.1-.5.1-.1.3-.3.4-.5.1-.2.2-.3.3-.4.1-.2 0-.3 0-.5-.1-.1-.6-1.4-.8-1.9-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1.1 2.7c.1.2 1.8 2.8 4.5 3.9.6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.2-1.2-.1-.1-.2-.2-.5-.3z"/></svg></a>
-
+<div class="topline"></div>
+<header><nav class="wrap"><a class="brand" href="#home">DENPLEX<span> ARTS</span></a><button class="menu" id="menu" aria-label="Toggle menu">☰</button><ul class="links" id="links"><li><a href="#home">Home</a></li><li><a href="#portfolio">Portfolio</a></li><li><a href="#about">About</a></li><li><a href="#webdesign">Web design</a></li><li><a class="nav-cta" href="#contact">Let's talk</a></li></ul></nav></header>
+<main>
+<section class="hero" id="home"><div class="wrap hero-grid"><div class="reveal"><div class="eyebrow">Graphic Designer · Denplex Arts</div><h1>Ideas made<br><em>visible.</em></h1><p>I’m David Muiruri, a graphic designer creating thoughtful visual identities, compelling promotional artwork and digital experiences for brands and businesses.</p><div class="actions"><a class="btn gold" href="#portfolio">Explore my work ↗</a><a class="btn ghost" href="#contact">Start a project</a></div></div><div class="portrait reveal"><img src="images/profile.png" alt="Portrait of David Muiruri" onerror="this.style.display='none'"></div></div></section>
+<section class="portfolio" id="portfolio"><div class="wrap"><div class="section-head reveal"><div><div class="kicker">A selection of my work</div><h2>Selected projects</h2></div><p class="intro">Explore visual projects across branding, advertising, print and digital design. Choose a category to filter the gallery.</p></div>
+<div class="filters"><button class="filter active" data-filter="all">All work</button><button class="filter" data-filter="branding">Branding & logos</button><button class="filter" data-filter="poster">Posters & advertising</button><button class="filter" data-filter="print">Print & editorial</button></div>
+<div class="gallery" id="gallery">
+<figure class="item" data-cat="branding"><img src="images/project1.jpg" alt="Business website and brand project" loading="lazy"><figcaption class="caption"><b>Business Website</b><small>Branding / Digital</small></figcaption></figure>
+<figure class="item" data-cat="branding"><img src="images/project2.jpg" alt="Logo system" loading="lazy"><figcaption class="caption"><b>Logo System</b><small>Brand identity</small></figcaption></figure>
+<figure class="item" data-cat="poster"><img src="images/project3.jpg" alt="Promotional campaign" loading="lazy"><figcaption class="caption"><b>Campaign Artwork</b><small>Advertising</small></figcaption></figure>
+<figure class="item" data-cat="branding"><img src="images/rift-tech-flat.jpg" alt="Rift Tech branding" loading="lazy"><figcaption class="caption"><b>Rift Tech</b><small>Brand identity</small></figcaption></figure>
+<figure class="item" data-cat="branding"><img src="images/nailuxe-storefront-mockup.jpg" alt="Nailuxe storefront" loading="lazy"><figcaption class="caption"><b>Nailuxe</b><small>Branding / Mockup</small></figcaption></figure>
+<figure class="item" data-cat="branding"><img src="images/denplexarts.png" alt="Denplex Arts logo" loading="lazy"><figcaption class="caption"><b>Denplex Arts</b><small>Logo design</small></figcaption></figure>
+<figure class="item" data-cat="branding"><img src="images/Distinct-Logo.png" alt="Distinct logo" loading="lazy"><figcaption class="caption"><b>Distinct</b><small>Logo design</small></figcaption></figure>
+<figure class="item" data-cat="poster"><img src="images/fashion%20poster%20design.jpg" alt="Fashion poster" loading="lazy"><figcaption class="caption"><b>Fashion Campaign</b><small>Poster design</small></figcaption></figure>
+<figure class="item" data-cat="poster"><img src="images/fluxx%20beauty.jpg" alt="Fluxx beauty advert" loading="lazy"><figcaption class="caption"><b>Fluxx Beauty</b><small>Beauty advertising</small></figcaption></figure>
+<figure class="item" data-cat="poster"><img src="images/HOSPITAL-POSTER-DESIGN.png" alt="Hospital poster" loading="lazy"><figcaption class="caption"><b>Healthcare Poster</b><small>Information design</small></figcaption></figure>
+<figure class="item" data-cat="poster"><img src="images/FASHION%20POSTER%2012.jpg" alt="Fashion poster design" loading="lazy"><figcaption class="caption"><b>Fashion Poster</b><small>Advertising</small></figcaption></figure>
+<figure class="item" data-cat="print"><img src="images/MENU%20AFRICAS%20DELICACIES.jpg" alt="Africa's Delicacies menu" loading="lazy"><figcaption class="caption"><b>Africa's Delicacies</b><small>Menu / Print</small></figcaption></figure>
+<figure class="item" data-cat="poster"><img src="images/SHOOT%20POSTER.jpg" alt="Shoot poster" loading="lazy"><figcaption class="caption"><b>Shoot</b><small>Promotional poster</small></figcaption></figure>
+<figure class="item" data-cat="poster"><img src="images/STEPH%20CURRY%20POSTER.jpg" alt="Stephen Curry poster" loading="lazy"><figcaption class="caption"><b>Sports Poster</b><small>Poster design</small></figcaption></figure>
+<figure class="item" data-cat="poster"><img src="images/graduate%201.jpg" alt="Graduation poster" loading="lazy"><figcaption class="caption"><b>Graduation Design</b><small>Promotional design</small></figcaption></figure>
+<figure class="item" data-cat="poster"><img src="images/HOODIE%20POSTER.jpg" alt="Hoodie poster" loading="lazy"><figcaption class="caption"><b>Hoodie Promotion</b><small>Product advertising</small></figcaption></figure>
+<figure class="item" data-cat="poster"><img src="images/Untitled-1.jpg" alt="Graphic poster" loading="lazy"><figcaption class="caption"><b>Graphic Composition</b><small>Poster design</small></figcaption></figure>
+<figure class="item" data-cat="poster"><img src="images/prada%201.jpg" alt="Fashion concept one" loading="lazy"><figcaption class="caption"><b>Fashion Concept 01</b><small>Fashion graphic</small></figcaption></figure>
+<figure class="item" data-cat="poster"><img src="images/prada%202.jpg" alt="Fashion concept two" loading="lazy"><figcaption class="caption"><b>Fashion Concept 02</b><small>Fashion graphic</small></figcaption></figure>
+<figure class="item" data-cat="poster"><img src="images/prada%203.jpg" alt="Fashion concept three" loading="lazy"><figcaption class="caption"><b>Fashion Concept 03</b><small>Fashion graphic</small></figcaption></figure>
+<figure class="item" data-cat="poster"><img src="images/prada%204.jpg" alt="Fashion concept four" loading="lazy"><figcaption class="caption"><b>Fashion Concept 04</b><small>Fashion graphic</small></figcaption></figure>
+<figure class="item" data-cat="poster"><img src="images/FASHION%20D2.jpg" alt="Fashion editorial graphic" loading="lazy"><figcaption class="caption"><b>Fashion Editorial</b><small>Fashion graphic</small></figcaption></figure>
+<figure class="item" data-cat="poster"><img src="images/MODEL%201.png" alt="Model study one" loading="lazy"><figcaption class="caption"><b>Model Study 01</b><small>Creative poster</small></figcaption></figure>
+<figure class="item" data-cat="poster"><img src="images/MODEL%202.png" alt="Model study two" loading="lazy"><figcaption class="caption"><b>Model Study 02</b><small>Creative poster</small></figcaption></figure>
+<figure class="item" data-cat="poster"><img src="images/MODEL%203.png" alt="Model study three" loading="lazy"><figcaption class="caption"><b>Model Study 03</b><small>Creative poster</small></figcaption></figure>
+<figure class="item" data-cat="poster"><img src="images/petanns.png" alt="Petanns Kenya Driving School advertisement" loading="lazy"><figcaption class="caption"><b>Petanns Kenya Driving School</b><small>Client project / Advertising</small></figcaption></figure>
+</div></div></section>
+<section id="about"><div class="wrap about-grid"><div class="monogram reveal"><small>Independent creative practice</small><strong>DA.</strong><small>Design · Detail · Direction</small></div><div class="about-copy reveal"><div class="kicker">A little about me</div><h2>Design with purpose<br>and personality.</h2><p>I’m David Muiruri, the graphic designer behind Denplex Arts. I enjoy transforming ideas into clear and memorable visual communication. My work includes logo and brand identity, promotional graphics, social media artwork and print layouts.</p><p>I approach each project by considering its message, audience and visual direction. I value thoughtful composition, typography, colour and consistency, and I’m always learning and refining my creative process.</p><div class="skills"><div class="skill">Visual identity & logos</div><div class="skill">Advertising & posters</div><div class="skill">Editorial & print design</div><div class="skill">Social media graphics</div><div class="skill">Digital design</div><div class="skill">Website design</div></div></div></div></section>
+<section class="tools"><div class="wrap reveal"><div class="kicker">My creative toolkit</div><h2>Tools I work with</h2><p class="intro" style="margin-top:12px">Software used across my design and digital creative practice.</p><div class="tool-list"><span class="tool">Adobe Illustrator</span><span class="tool">Adobe Photoshop</span><span class="tool">Adobe InDesign</span><span class="tool">Canva</span></div></div></section>
+<section class="web" id="webdesign"><div class="wrap"><div class="section-head reveal"><div><div class="kicker">Beyond graphic design</div><h2>Web design & digital</h2></div><p class="intro">I also work on website design and development, bringing visual thinking into responsive digital experiences.</p></div><div class="web-grid"><article class="web-card"><img src="images/portfolio.jpg" alt="Portfolio website preview" loading="lazy"><p>Portfolio website</p></article><article class="web-card"><img src="images/PORTFOLIO1.jpg" alt="Website preview" loading="lazy"><p>Website design</p></article><article class="web-card"><img src="images/ecomerce.jpg" alt="E-commerce preview" loading="lazy"><p>E-commerce concept</p></article><article class="web-card"><img src="images/business.jpg" alt="Business website preview" loading="lazy"><p>Business website</p></article><article class="web-card"><img src="images/ecomerce2.jpg" alt="Online store preview" loading="lazy"><p>Online store concept</p></article><article class="web-card"><img src="images/business4.jpg" alt="Business web concept" loading="lazy"><p>Business web concept</p></article></div></div></section>
+<section class="contact" id="contact"><div class="wrap contact-grid"><div class="reveal"><div class="kicker" style="color:#57472f">Have a project in mind?</div><h2>Let's create something meaningful.</h2><p class="contact-copy">For design enquiries, collaborations or website projects, send me a message. I’d be glad to hear what you’re working on.</p><div class="details"><span>WhatsApp: +254 712 020 337</span><span>Portfolio: denplex1.github.io</span></div></div><form class="form reveal" id="waForm"><input id="name" placeholder="Your name" required><input id="email" type="email" placeholder="Your email address" required><textarea id="msg" placeholder="Tell me about your project..." required></textarea><button class="btn" type="submit">Send enquiry via WhatsApp ↗</button></form></div></section>
+</main>
+<footer><div class="wrap foot"><span>© <span id="year"></span> Denplex Arts · David Muiruri</span><span>Designed with creativity and purpose.</span></div></footer>
+<div id="lightbox" role="dialog" aria-modal="true" aria-label="Project image preview"><button class="close" id="close" aria-label="Close">×</button><img id="large" alt="Expanded portfolio project"></div>
+<a class="whatsapp" href="https://wa.me/254712020337" target="_blank" rel="noopener" aria-label="WhatsApp">✆</a>
 <script>
-// LIGHTBOX - PINTEREST STYLE
-const lb=document.getElementById('lightbox'), lbImg=document.getElementById('lightbox-img');
-document.querySelectorAll('.masonry-item img').forEach(im=>{
- im.addEventListener('click',()=>{ lbImg.src=im.src; lb.classList.add('active'); document.body.style.overflow='hidden'; });
-});
-document.getElementById('lightbox-close').onclick=()=>{lb.classList.remove('active');document.body.style.overflow=''};
-lb.onclick=e=>{ if(e.target===lb) lb.classList.remove('active'), document.body.style.overflow=''; };
-
-// MATRIX OFF ON PHONE
-const c=document.getElementById('matrix'), x=c.getContext('2d');
-if(innerWidth>900){ c.width=innerWidth; c.height=innerHeight; let cols=Math.floor(c.width/14), drops=Array(cols).fill(0).map(()=>Math.random()*-10); (function draw(){ x.fillStyle='rgba(0,0,0,0.08)'; x.fillRect(0,0,c.width,c.height); x.fillStyle='#00FF88'; x.font='14px monospace'; drops.forEach((y,i)=>{ x.fillText(Math.random()>0.5?'0':'1', i*14, y*14); if(y*14>c.height && Math.random()>0.975) drops[i]=0; drops[i]++ }); requestAnimationFrame(draw) })(); } else c.style.display='none';
-
-// MENU + FADE
-document.getElementById('hamburger').onclick=function(){ this.classList.toggle('active'); document.getElementById('nav-links').classList.toggle('active'); };
-document.querySelectorAll('.fade').forEach(el=>{ new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:0.1}).observe(el) });
-
-// WHATSAPP
-document.getElementById('waForm').onsubmit=e=>{ e.preventDefault(); let n=document.getElementById('name').value, em=document.getElementById('email').value, m=document.getElementById('msg').value; open(`https://wa.me/254712020337?text=*New*%0AName:${n}%0AEmail:${em}%0A${m}`,'_blank'); e.target.reset(); };
+const menu=document.getElementById('menu'),links=document.getElementById('links');
+menu.addEventListener('click',()=>{links.classList.toggle('open');menu.textContent=links.classList.contains('open')?'×':'☰'});
+links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{links.classList.remove('open');menu.textContent='☰'}));
+document.querySelectorAll('.filter').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.filter').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.querySelectorAll('.item').forEach(card=>card.hidden=b.dataset.filter!=='all'&&card.dataset.cat!==b.dataset.filter)}));
+const lb=document.getElementById('lightbox'),large=document.getElementById('large'),close=()=>{lb.classList.remove('open');large.src='';document.body.style.overflow=''};
+document.querySelectorAll('.item img').forEach(img=>img.addEventListener('click',()=>{large.src=img.currentSrc||img.src;large.alt=img.alt;lb.classList.add('open');document.body.style.overflow='hidden'}));
+document.getElementById('close').addEventListener('click',close);lb.addEventListener('click',e=>{if(e.target===lb)close()});document.addEventListener('keydown',e=>{if(e.key==='Escape')close()});
+const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}}),{threshold:.12});document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+document.getElementById('waForm').addEventListener('submit',e=>{e.preventDefault();const msg=`Hello Denplex Arts,\nName: ${name.value}\nEmail: ${email.value}\nProject: ${document.getElementById('msg').value}`;window.open('https://wa.me/254712020337?text='+encodeURIComponent(msg),'_blank','noopener');e.target.reset()});
+document.getElementById('year').textContent=new Date().getFullYear();
 </script>
-</body>
-</html>
+</body></html>
